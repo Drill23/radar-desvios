@@ -4584,7 +4584,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     'g-1reg': { t: '1º registro', x: 'O item não teve lançamento no dia anterior da semana, então não há com o que comparar (⚪).', k: ['1º registro', 'primeiro registro', 'sem registro'] },
     'g-tree': { t: 'Menu de anomalias', x: 'Todos os itens, separados por setor. O número ao lado é o valor no dia e turno escolhidos. A bolinha mostra se piorou ou melhorou. Toque num item para abrir o dossiê dele.', k: ['menu', 'anomalias', 'arvore', 'árvore', 'lista de itens'] },
     'g-t1t2': { t: 'T1, T2 e T1+T2', x: '<b>T1</b> = 1º turno (lançado no mesmo dia). <b>T2</b> = 2º turno (digitado na manhã seguinte, com a data do dia de produção). <b>T1+T2</b> soma os dois turnos.', k: ['t1', 't2', 't1+t2', 'turno'] },
-    'g-present': { t: 'Modo apresentação', x: 'Slides grandes e animados, montados na hora com os monitoramentos. Escolha um <b>roteiro</b> — <b>do dia</b> (o resumo do grupo, alertas, quem está acima de 10% há mais tempo e prioridades), <b>da semana</b> (quem está acima de 10% há mais tempo e prioridades) ou <b>do mês</b> (a corrida animada com o pódio, quem está acima de 10% há mais tempo e prioridades) — ou <b>só esta tela</b>. Cada roteiro abre com uma capa só com o título e separa as partes em capítulos. Atalhos: ← → passa · <b>G</b> visão geral · <b>N</b> o que falar · <b>L</b> laser · <b>B</b> pausa a tela · <b>A</b> automático (cada slide no seu tempo) · Home/End início e fim · Esc sai. O relógio no canto mostra o tempo de reunião.', k: ['apresentacao', 'apresentação', 'slides', 'reuniao', 'reunião'] },
+    'g-present': { t: 'Modo apresentação', x: 'Slides grandes e animados, montados na hora com os monitoramentos. Escolha um <b>roteiro</b> — <b>do dia</b> (o resumo do grupo, quem está acima de 10% há mais tempo e prioridades), <b>da semana</b> (quem está acima de 10% há mais tempo e prioridades) ou <b>do mês</b> (a corrida animada com o pódio, quem está acima de 10% há mais tempo e prioridades) — ou <b>só esta tela</b>. Cada roteiro abre com uma capa só com o título e separa as partes em capítulos. Atalhos: ← → passa · <b>G</b> visão geral · <b>N</b> o que falar · <b>L</b> laser · <b>B</b> pausa a tela · <b>A</b> automático (cada slide no seu tempo) · Home/End início e fim · Esc sai. O relógio no canto mostra o tempo de reunião.', k: ['apresentacao', 'apresentação', 'slides', 'reuniao', 'reunião'] },
     'g-tv': { t: 'Modo TV', x: 'As telas giram sozinhas a cada 15 segundos, incluindo viradas de patamar, persistência, famílias e a corrida animada dos desvios. Bom para deixar numa TV da área.', k: ['modo tv', 'televisao', 'televisão'] },
     'g-insights': { t: 'Insights do Radar', x: 'Cartões que aparecem sozinhos com descobertas automáticas: alertas da Sentinela, previsões, relações fortes. Toque em "Ver no dashboard" para ir direto ao ponto.', k: ['insights', 'cartoes', 'flashcards'] },
     'g-back': { t: 'Voltar', x: 'O Radar lembra o caminho que você fez. O botão Voltar (ou o voltar do celular/navegador) refaz o caminho de trás para frente.', k: ['voltar'] },
@@ -5779,7 +5779,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     var vn = viewName(S.view), iso = DS.dates[S.d], wk = DS.weekOf(S.d), mo = DS.monthOf(S.d);
     var opt = function (id, ic, t, x, big) { return '<button class="pc-o' + (big ? ' big' : '') + '" id="' + id + '"><i>' + I(ic) + '</i><span><b>' + t + '</b><span>' + x + '</span></span></button>'; };
     var h = '<div class="pchoose"><h4>Modo apresentação</h4>' +
-      opt('pc-r', 'story', 'Roteiro do dia', 'O turno de ' + E.dlabelLong(iso) + ': o resumo do grupo, os alertas, quem está acima de 10% há mais tempo e as prioridades.', true) +
+      opt('pc-r', 'story', 'Roteiro do dia', 'O turno de ' + E.dlabelLong(iso) + ': o resumo do grupo, quem está acima de 10% há mais tempo e as prioridades.', true) +
       opt('pc-w', 'week', 'Roteiro da semana', 'Semana ' + wk.label + ': quem está acima de 10% há mais tempo e as prioridades.') +
       opt('pc-m', 'mes', 'Roteiro do mês', mo.labelF + ': a corrida animada dos desvios com o pódio, quem está acima de 10% há mais tempo e as prioridades.') +
       opt('pc-v', 'present', 'Só esta tela', esc(vn) + ' em slides grandes.') +
@@ -7240,18 +7240,15 @@ if (typeof module !== 'undefined') module.exports = RECO;
     } };
   }
   function addCh(deck, arr, ch, n) { (arr || []).slice(0, n || 99).forEach(function (s2) { s2.ch = ch; deck.push(s2); }); }
-  /* roteiro do dia: capa → o dia → alertas → persistência → prioridades */
+  /* roteiro do dia: capa → o dia → quem está acima de 10% há mais tempo → prioridades */
   function roteiroDeck() {
     var deck = [], K = kickDay(), day = dayDeck();
-    var chs = [{ t: 'O dia', ic: 'panorama', x: 'como foi o ' + TL() }, { t: 'Alertas', ic: 'alert', x: 'sentinela e previsão do próximo turno' }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
+    var chs = [{ t: 'O dia', ic: 'panorama', x: 'como foi o ' + TL() }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
     deck.push(titleSlide('Roteiro do dia', 'story', K));
     deck.push(chapterSlide(1, chs[0]));
     addCh(deck, day.filter(function (s2) { return s2.name === 'Ranking'; }), chs[0].t, 3);
-    deck.push(chapterSlide(2, chs[1]));
-    addCh(deck, day.filter(function (s2) { return s2.name === 'Sentinela'; }), chs[1].t);
-    try { addCh(deck, projDeck(chs[1].t), chs[1].t, 1); } catch (e) { console.error(e); }
     try { addCh(deck, persistDeck('Persistência', { short: true }), 'Persistência'); } catch (e) { console.error(e); }
-    try { var pr = priorDeck().slice(0, 2); if (pr.length) { deck.push(chapterSlide(3, chs[2])); addCh(deck, pr, chs[2].t); } } catch (e) { console.error(e); }
+    try { var pr = priorDeck().slice(0, 2); if (pr.length) { deck.push(chapterSlide(2, chs[1])); addCh(deck, pr, chs[1].t); } } catch (e) { console.error(e); }
     return deck;
   }
   function dayMsgs() {
