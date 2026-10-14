@@ -2308,7 +2308,7 @@ var ENG = (function () {
       for (var dd = 0; dd < nD; dd++) { sa += AM[tt][o2 + dd]; sn += NC[tt][o2 + dd]; cAM[tt][o + dd + 1] = sa; cNC[tt][o + dd + 1] = sn; }
     }
     this.cAM = cAM; this.cNC = cNC;
-    // taxa geral (itens de qualidade: não excluídos, tipo defeito)
+    // taxa geral (itens de qualidade: não excluídos, tipo desvio)
     var gA = [new Float64Array(nD + 1), new Float64Array(nD + 1)], gN = [new Float64Array(nD + 1), new Float64Array(nD + 1)];
     for (tt = 0; tt < 2; tt++) {
       var sA = 0, sN = 0;
@@ -4572,7 +4572,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     'g-pp': { t: 'p.p. (pontos percentuais)', x: 'A diferença entre dois percentuais, já arredondados como aparecem na tela.', ex: 'De 22,9% para 27,1% = <b>+4,2 p.p.</b> (não é "4,2%" de aumento).', k: ['p.p', 'pp', 'pontos percentuais'] },
     'g-semana': { t: 'Comparação do método', x: 'Cada item é comparado com o <b>dia anterior com produção da mesma semana</b>, no mesmo turno. Segunda-feira começa a semana limpa, sem comparação.', k: ['dia anterior', 'comparacao', 'comparação', 'segunda', 'ontem'] },
     'g-evisc': { t: 'Ineficiência da evisceradora', x: 'É a única máquina que entra no resumo. O Radar fala sempre da <b>ineficiência</b> da evisceradora, calculada como os outros itens: NC ÷ amostras da máquina. Entra no resumo quando a ineficiência chega a 10% ou mais. Subir é piorar; descer é melhorar.', ex: '100 NC em 400 amostras = <b>25,0% de ineficiência</b> → entra no resumo.', k: ['evisceradora', 'ineficiencia', 'ineficiência', 'maquina', 'máquina'] },
-    'g-taxa': { t: 'Taxa geral de NC', x: 'Soma de todas as não conformidades ÷ soma de todas as amostras dos itens de qualidade do turno. É um <b>índice das avaliações</b> (cada ave pode ser avaliada em vários itens), não o % de aves com defeito. Serve como "termômetro" geral: se sobe, a qualidade como um todo piorou.', ex: 'Taxa geral 6,2% = de cada 100 avaliações feitas no turno, cerca de 6 deram não conforme.', k: ['taxa geral', 'taxa de nc', 'nc geral'] },
+    'g-taxa': { t: 'Taxa geral de NC', x: 'Soma de todas as não conformidades ÷ soma de todas as amostras dos itens de qualidade do turno. É um <b>índice das avaliações</b> (cada ave pode ser avaliada em vários itens), não o % de aves com desvio. Serve como "termômetro" geral: se sobe, a qualidade como um todo piorou.', ex: 'Taxa geral 6,2% = de cada 100 avaliações feitas no turno, cerca de 6 deram não conforme.', k: ['taxa geral', 'taxa de nc', 'nc geral'] },
     'g-evid': { t: 'Força da evidência', x: 'Diz se a diferença entre os dois lados é grande o bastante, <b>para o tamanho das amostras</b>, para não ser só acaso. Com poucas peças avaliadas, 2 ou 3 p.p. podem ser sorte; com milhares, até 1 p.p. pode ser real. <b>Evidência forte</b>: chance de acaso menor que 1%. <b>Provavelmente real</b>: menor que 5%. <b>Pode ser só variação da amostra</b>: acompanhe antes de concluir. Dia contra dia usa as peças avaliadas; períodos de vários dias comparam os <b>valores de cada dia</b>, que é mais exigente porque considera a variação natural entre um dia e outro.', ex: '8% contra 12% com 50 peças de cada lado pode ser acaso; com 2.000 peças de cada lado é diferença real.', k: ['evidencia', 'evidência', 'diferenca real', 'diferença real', 'acaso', 'variacao da amostra', 'significativo', 'significancia'] },
     'g-margem': { t: 'Margem (95%)', x: 'O % do dia vem de uma amostra, não de todas as peças. A margem mostra entre quanto e quanto o valor verdadeiro provavelmente está (95% de confiança). Quanto <b>maior a amostra</b>, mais estreita a margem.', ex: '9,8% com margem de 7,9% a 12,1%: o item pode estar acima de 10% de verdade, mesmo com o número abaixo do corte. O corte do método continua sendo o número calculado.', k: ['margem', 'margem de erro', 'intervalo de confianca', 'intervalo de confiança'] },
     'g-tol': { t: 'Tolerância da planilha', x: 'O valor da coluna TOLERÂNCIA da base para este item (quando preenchida). É mostrado só como referência: o corte do resumo continua sendo <b>10,0%</b>, como manda o método.', k: ['tolerancia', 'tolerância'] },
@@ -4584,7 +4584,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     'g-1reg': { t: '1º registro', x: 'O item não teve lançamento no dia anterior da semana, então não há com o que comparar (⚪).', k: ['1º registro', 'primeiro registro', 'sem registro'] },
     'g-tree': { t: 'Menu de anomalias', x: 'Todos os itens, separados por setor. O número ao lado é o valor no dia e turno escolhidos. A bolinha mostra se piorou ou melhorou. Toque num item para abrir o dossiê dele.', k: ['menu', 'anomalias', 'arvore', 'árvore', 'lista de itens'] },
     'g-t1t2': { t: 'T1, T2 e T1+T2', x: '<b>T1</b> = 1º turno (lançado no mesmo dia). <b>T2</b> = 2º turno (digitado na manhã seguinte, com a data do dia de produção). <b>T1+T2</b> soma os dois turnos.', k: ['t1', 't2', 't1+t2', 'turno'] },
-    'g-present': { t: 'Modo apresentação', x: 'Slides grandes e animados, montados na hora com os monitoramentos. Escolha um <b>roteiro</b> — <b>do dia</b> (o turno, o que mais mudou, alertas, persistência e prioridades), <b>da semana</b> (quem mais mudou contra a semana anterior, persistência e prioridades) ou <b>do mês</b> (quem mais mudou, a corrida animada com o pódio, persistência e prioridades) — ou <b>só esta tela</b>. Cada roteiro abre com uma capa só com o título e separa as partes em capítulos. Os números vêm explicados: "quem mais mudou" mostra o total do período e as peças por trás de cada %. Atalhos: ← → passa · <b>G</b> visão geral · <b>N</b> o que falar · <b>L</b> laser · <b>B</b> pausa a tela · <b>A</b> automático (cada slide no seu tempo) · Home/End início e fim · Esc sai. O relógio no canto mostra o tempo de reunião.', k: ['apresentacao', 'apresentação', 'slides', 'reuniao', 'reunião'] },
+    'g-present': { t: 'Modo apresentação', x: 'Slides grandes e animados, montados na hora com os monitoramentos. Escolha um <b>roteiro</b> — <b>do dia</b> (o resumo do grupo, alertas, quem está acima de 10% há mais tempo e prioridades), <b>da semana</b> (quem está acima de 10% há mais tempo e prioridades) ou <b>do mês</b> (a corrida animada com o pódio, quem está acima de 10% há mais tempo e prioridades) — ou <b>só esta tela</b>. Cada roteiro abre com uma capa só com o título e separa as partes em capítulos. Atalhos: ← → passa · <b>G</b> visão geral · <b>N</b> o que falar · <b>L</b> laser · <b>B</b> pausa a tela · <b>A</b> automático (cada slide no seu tempo) · Home/End início e fim · Esc sai. O relógio no canto mostra o tempo de reunião.', k: ['apresentacao', 'apresentação', 'slides', 'reuniao', 'reunião'] },
     'g-tv': { t: 'Modo TV', x: 'As telas giram sozinhas a cada 15 segundos, incluindo viradas de patamar, persistência, famílias e a corrida animada dos desvios. Bom para deixar numa TV da área.', k: ['modo tv', 'televisao', 'televisão'] },
     'g-insights': { t: 'Insights do Radar', x: 'Cartões que aparecem sozinhos com descobertas automáticas: alertas da Sentinela, previsões, relações fortes. Toque em "Ver no dashboard" para ir direto ao ponto.', k: ['insights', 'cartoes', 'flashcards'] },
     'g-back': { t: 'Voltar', x: 'O Radar lembra o caminho que você fez. O botão Voltar (ou o voltar do celular/navegador) refaz o caminho de trás para frente.', k: ['voltar'] },
@@ -5779,9 +5779,9 @@ if (typeof module !== 'undefined') module.exports = RECO;
     var vn = viewName(S.view), iso = DS.dates[S.d], wk = DS.weekOf(S.d), mo = DS.monthOf(S.d);
     var opt = function (id, ic, t, x, big) { return '<button class="pc-o' + (big ? ' big' : '') + '" id="' + id + '"><i>' + I(ic) + '</i><span><b>' + t + '</b><span>' + x + '</span></span></button>'; };
     var h = '<div class="pchoose"><h4>Modo apresentação</h4>' +
-      opt('pc-r', 'story', 'Roteiro do dia', 'O turno de ' + E.dlabelLong(iso) + ': o que mais mudou, os alertas, há quanto tempo os desvios duram e as prioridades.', true) +
-      opt('pc-w', 'week', 'Roteiro da semana', 'Semana ' + wk.label + ': quem mais mudou contra a anterior, há quanto tempo os desvios duram e as prioridades.') +
-      opt('pc-m', 'mes', 'Roteiro do mês', mo.labelF + ': quem mais mudou, a corrida animada dos desvios com o pódio, a persistência e as prioridades.') +
+      opt('pc-r', 'story', 'Roteiro do dia', 'O turno de ' + E.dlabelLong(iso) + ': o resumo do grupo, os alertas, quem está acima de 10% há mais tempo e as prioridades.', true) +
+      opt('pc-w', 'week', 'Roteiro da semana', 'Semana ' + wk.label + ': quem está acima de 10% há mais tempo e as prioridades.') +
+      opt('pc-m', 'mes', 'Roteiro do mês', mo.labelF + ': a corrida animada dos desvios com o pódio, quem está acima de 10% há mais tempo e as prioridades.') +
       opt('pc-v', 'present', 'Só esta tela', esc(vn) + ' em slides grandes.') +
       '<div class="pc-k">Atalhos: ← → passa · G visão geral · N o que falar · L laser · B pausa a tela · A automático · Esc sai</div></div>';
     var pop = openPop(anchor, h, '', 'right');
@@ -5852,11 +5852,6 @@ if (typeof module !== 'undefined') module.exports = RECO;
       } });
     })(c0);
     rows.slice(0, 12).forEach(function (r) { deck.push(itemSlide(r.i, K, [])); });
-    var mdd = mudouDia(K); if (mdd) { mdd.name = 'Pioras e melhoras'; deck.push(mdd); }
-    if (!mdd) deck.push({ name: 'Pioras e melhoras', kick: K, keys: ['p-mov', 'ln-mov'], r: function (el) {
-      var col = function (arr, st, ttl) { return '<div class="sl-mv st-' + st + '"><h3>' + ttl + '</h3>' + (arr.slice(0, 4).map(function (r, k) { return '<div class="sl-mvi" style="--k:' + k + '"><span>' + esc(r.it.title) + '</span><small>' + E.fp(r.pv) + ' → ' + E.fp(r.v) + '</small><b>' + arrowTxt(r.it, r.delta) + '</b></div>'; }).join('') || '<div class="sl-mvi"><span>nenhum</span></div>') + '</div>'; };
-      el.innerHTML = '<div class="sl-c">' + slTitle('O que mais mudou', pdl ? 'Hoje × ' + pdl : 'Sem dia anterior na semana', 'todos os itens de qualidade, mesmo abaixo de 10%') + '<div class="sl-mvs">' + col(W, 'worse', '▲ Pioraram') + col(B, 'better', '▼ Melhoraram') + '</div></div>';
-    } });
     if (DS.has(d, [0]) && DS.has(d, [1])) deck.push({ name: 'T1 × T2', kick: K, keys: ['p-vs'], r: function (el) {
       var side = function (t) { var rr = DS.day(d, [t], { band: 0, mode: 'week' }).rows.filter(function (r) { return !r.it.excl && r.hit; }).length, gg = DS.gen(d, d, [t]); return { n: rr, g: gg ? gg.v : null }; }, a = side(0), b = side(1);
       el.innerHTML = '<div class="sl-c">' + slTitle('Turnos', '1º turno × 2º turno', E.dlabelLong(DS.dates[d])) + '<div class="sl-vs"><div class="sl-vsi st-t1"><span>T1</span><b class="num">' + cu(a.n, 'i') + '</b><small>itens ≥ 10% · taxa ' + E.fp(a.g) + '</small></div><div class="sl-vsm">VS</div><div class="sl-vsi st-t2"><span>T2</span><b class="num">' + cu(b.n, 'i') + '</b><small>itens ≥ 10% · taxa ' + E.fp(b.g) + '</small></div></div></div>';
@@ -5953,8 +5948,6 @@ if (typeof module !== 'undefined') module.exports = RECO;
       el.innerHTML = '<div class="sl-c cover">' + slTitle(kick, title, '') + '<div class="sl-vs"><div class="sl-vsi st-t1"><span>' + esc(lblA) + '</span><b class="num">' + (gA ? cu(gA.v, 'p') : '—') + '</b><small>taxa geral</small></div><div class="sl-vsm st-' + st + '">' + (gA && gB ? arrowTxt(null, E.dlt(gA.v, gB.v)) : 'VS') + '</div><div class="sl-vsi st-t2"><span>' + esc(lblB) + '</span><b class="num">' + (gB ? cu(gB.v, 'p') : '—') + '</b><small>taxa geral</small></div></div><p class="sl-lead"><b>' + worse.length + '</b> itens pioraram e <b>' + better.length + '</b> melhoraram.</p></div>';
     } });
     var mv = function (arr, st, ttl) { return '<div class="sl-mv st-' + st + '"><h3>' + ttl + '</h3>' + (arr.slice(0, 5).map(function (r, k) { return '<div class="sl-mvi" style="--k:' + k + '"><span>' + esc(r.it.title) + '</span><small>' + E.fp(r.b) + ' → ' + E.fp(r.a) + '</small><b>' + arrowTxt(r.it, r.dl) + '</b></div>'; }).join('') || '<div class="sl-mvi"><span>nenhum</span></div>') + '</div>'; };
-    if (rng) deck.push(mudouSlide({ kick: kick, A: rng.A, B: rng.B, lblA: lblA, lblB: lblB, rA: rng.rA, rB: rng.rB, per: rng.per, how: rng.how, exA: rng.exA, exB: rng.exB, cmpTxt: rng.cmpTxt, keys: keys[1] }));
-    else deck.push({ name: 'Quem mudou', kick: kick, keys: keys[1], r: function (el) { el.innerHTML = '<div class="sl-c">' + slTitle(kick, 'Quem mais mudou', esc(lblB) + ' → ' + esc(lblA) + ' · % do período inteiro (soma das peças com defeito ÷ soma das avaliadas)') + '<div class="sl-mvs">' + mv(worse, 'worse', '▲ Pioraram') + mv(better, 'better', '▼ Melhoraram') + '</div></div>'; } });
     if (chartFn) deck.push({ name: 'Evolução', kick: kick, keys: keys[2], r: function (el) { el.innerHTML = '<div class="sl-c">' + slTitle(kick, 'Evolução', '') + slChartBox('slab') + '</div>'; after(function () { chartFn($('#slab', el)); }); } });
     return deck;
   }
@@ -6120,7 +6113,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
       '<h4 class="sd-h">Colagens possivelmente incompletas (' + H.partial.length + ')</h4><p class="mut">A colagem mais nova de um dia/turno substitui as anteriores. Se ela tem bem menos linhas, parte do turno pode ter ficado de fora.</p>' + lst(H.partial, function (x) { var p = x.key.split('|'); return '<li>' + E.dmy(p[0]) + ' T' + p[1] + ': colagem ' + esc(x.col) + ' com ' + x.rows + ' linhas (antes: ' + x.prev + ')</li>'; }) +
       '<h4 class="sd-h">Turnos com cobertura baixa (' + H.cov.length + ')</h4><p class="mut">Últimos 60 dias úteis: menos de 80% das avaliações normais do turno (mediana dos 8 dias úteis anteriores). Pode ser produção menor, lançamento atrasado ou coleta esquecida. O turno parece melhor do que é.</p>' + lst(H.cov.slice().reverse(), function (x) { return '<li>' + E.dlabelLong(DS.dates[x.d]) + '/' + DS.dates[x.d].slice(2, 4) + ' T' + (x.t + 1) + ': ' + x.n + ' avaliações (normal ~' + x.med + ')</li>'; }) +
       '<h4 class="sd-h">Turnos colados em dobro (' + H.dupTurns.length + ')</h4><p class="mut">Na mesma colagem, todas as linhas do dia/turno aparecem duas vezes (ou mais). Isso dobra as amostras e as NC: corrija lançando o turno de novo, uma vez só, com COLAGEM mais nova.</p>' + lst(H.dupTurns, function (x) { return '<li>' + E.dmy(x.d) + ' T' + x.t + ' · colagem ' + esc(x.col || '(histórica)') + ' · ' + x.rows + ' linhas</li>'; }) +
-      '<h4 class="sd-h">Linhas idênticas no mesmo turno (' + H.dups + ')</h4><p class="mut">Mesmo item, código, linha, amostra e NC. Normalmente são avaliações repetidas legítimas (por exemplo, várias amostras de 10 sem defeito). Só preocupa se o turno inteiro estiver repetido (quadro acima).</p>' + lst(H.dupEx, function (x) { return '<li>Linhas ' + x.first + ' e ' + x.line + ' · ' + E.dmy(x.row.d) + ' T' + x.row.t + ' · ' + nm(x.row) + ' · ' + x.row.nc + '/' + x.row.am + '</li>'; }) +
+      '<h4 class="sd-h">Linhas idênticas no mesmo turno (' + H.dups + ')</h4><p class="mut">Mesmo item, código, linha, amostra e NC. Normalmente são avaliações repetidas legítimas (por exemplo, várias amostras de 10 sem desvio). Só preocupa se o turno inteiro estiver repetido (quadro acima).</p>' + lst(H.dupEx, function (x) { return '<li>Linhas ' + x.first + ' e ' + x.line + ' · ' + E.dmy(x.row.d) + ' T' + x.row.t + ' · ' + nm(x.row) + ' · ' + x.row.nc + '/' + x.row.am + '</li>'; }) +
       '<h4 class="sd-h">Blocos sem amostragem (' + H.skipped.length + ')</h4><p class="mut">Têm NC mas não têm amostra: ficam fora do cálculo, como manda o método.</p>' + lst(H.skipped, function (x) { return '<li>' + E.dmy(x.d) + ' T' + x.t + ' · ' + esc(x.param || '') + ' (' + esc(x.setor || '') + '): ' + x.nc + ' NC</li>'; }) +
       (H.errors.length ? '<h4 class="sd-h">Linhas que não foram lidas (' + H.errors.length + ')</h4>' + lst(H.errors, function (x) { return '<li>Linha ' + x.line + ': ' + esc(x.msg) + '</li>'; }) : '') +
       '</div></aside>';
@@ -6230,7 +6223,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     var deck = [];
     deck.push({ name: 'Onde agir primeiro', kick: K, keys: ['pr-l'], r: function (el) {
       var nCr = rows.filter(function (o) { return o.freq >= 0.5; }).length, nUp = rows.filter(function (o) { return o.trend === 'up'; }).length;
-      el.innerHTML = '<div class="sl-c cover">' + slTitle(K, 'Onde agir primeiro', 'cada item ganha uma <b>nota de 0 a 100</b>: quanto maior, mais urgente. A nota sobe quando o item passa de 10% em muitos dias, está acima há vários dias seguidos, tem % alto, tem muitas peças com defeito e vem piorando.') + '<div class="sl-stats">' + rows.slice(0, 3).map(function (o, k) { var q = QUAD[o.quad]; return slStat(k, (k + 1) + 'º · ' + esc(o.it.title), cu(o.score, 'i') + '<small> de 100</small>', '<b>' + q[0] + '</b><br>' + whyPlain(o).slice(0, 1).join('').replace(/<[^>]+>/g, ''), q[1] === 'better' ? 'better' : q[1] === 'none' ? 'none' : 'worse'); }).join('') + '</div><p class="sl-lead"><b>' + nCr + '</b> ' + (nCr === 1 ? 'item crônico' : 'itens crônicos') + ' (acima de 10% em metade dos dias ou mais) · <b>' + nUp + '</b> com tendência de alta.</p></div>';
+      el.innerHTML = '<div class="sl-c cover">' + slTitle(K, 'Onde agir primeiro', 'cada item ganha uma <b>nota de 0 a 100</b>: quanto maior, mais urgente. A nota sobe quando o item passa de 10% em muitos dias, está acima há vários dias seguidos, tem % alto, tem muitas peças com desvio e vem piorando.') + '<div class="sl-stats">' + rows.slice(0, 3).map(function (o, k) { var q = QUAD[o.quad]; return slStat(k, (k + 1) + 'º · ' + esc(o.it.title), cu(o.score, 'i') + '<small> de 100</small>', '<b>' + q[0] + '</b><br>' + whyPlain(o).slice(0, 1).join('').replace(/<[^>]+>/g, ''), q[1] === 'better' ? 'better' : q[1] === 'none' ? 'none' : 'worse'); }).join('') + '</div><p class="sl-lead"><b>' + nCr + '</b> ' + (nCr === 1 ? 'item crônico' : 'itens crônicos') + ' (acima de 10% em metade dos dias ou mais) · <b>' + nUp + '</b> com tendência de alta.</p></div>';
     } });
     deck.push({ name: 'Por quê', kick: K, keys: ['pr-l'], r: function (el) {
       el.innerHTML = '<div class="sl-c">' + slTitle(K, 'Por que cada um está na lista', 'nota de 0 a 100 · quanto maior, mais urgente · últimos ' + P.days.length + ' dias avaliados do ' + TL()) + '<div class="sl-list spw">' + rows.slice(0, 5).map(function (o, k) { var q = QUAD[o.quad]; return '<div class="sl-li st-' + (q[1] === 'better' ? 'better' : 'worse') + '" style="--k:' + k + '"><div class="spw-h"><b>' + (k + 1) + '. ' + esc(o.it.title) + '</b><span class="spw-n">nota <strong class="num">' + o.score + '</strong> de 100</span><span class="chip st-' + q[1] + '">' + q[0] + '</span></div><ul>' + whyPlain(o).slice(0, 3).map(function (w) { return '<li>' + w + '</li>'; }).join('') + '</ul></div>'; }).join('') + '</div></div>';
@@ -7063,10 +7056,10 @@ if (typeof module !== 'undefined') module.exports = RECO;
         '<div class="smv-b smv-n"><span>' + esc(o.rA || o.lblA) + '</span><i><s style="width:' + (r.a / mx * 100).toFixed(1) + '%"></s></i><strong class="num">' + E.fp(r.a) + '</strong><small>' + pcs(r.sa) + '</small></div></div>';
     };
     var col = function (arr, st, ttl) { return '<div class="smv-col"><h3 class="st-' + st + '">' + ttl + '</h3>' + (arr.map(function (r, k) { return row(r, k, st); }).join('') || '<div class="smv-none">nenhum item</div>') + '</div>'; };
-    var how = 'Cada % é o <b>total ' + o.per + '</b>: todas as peças com defeito ÷ todas as peças avaliadas ' + o.how + '.' + (o.single ? '' : ' <b>Não é a média dos dias nem o pior dia.</b>') +
-      (ex ? ' Ex.: ' + esc(ex.it.title.toLowerCase()) + ' teve ' + E.fint(ex.sa[1]) + ' peças com defeito em ' + E.fint(ex.sa[0]) + ' avaliadas ' + o.exA + ' = <b>' + E.fp(ex.a) + '</b>; ' + o.exB + ' foram ' + E.fint(ex.sb[1]) + ' em ' + E.fint(ex.sb[0]) + ' = <b>' + E.fp(ex.b) + '</b>. A diferença, ' + pts(ex.dl) + ', é o quanto ' + (ex.dl > 0 ? 'subiu' : 'caiu') + '.' : '') + ' <span class="smv-min">Só entram itens com pelo menos ' + minAm + ' peças avaliadas em cada lado.</span>';
+    var how = 'Cada % é o <b>total ' + o.per + '</b>: todas as peças com desvio ÷ todas as peças avaliadas ' + o.how + '.' + (o.single ? '' : ' <b>Não é a média dos dias nem o pior dia.</b>') +
+      (ex ? ' Ex.: ' + esc(ex.it.title.toLowerCase()) + ' teve ' + E.fint(ex.sa[1]) + ' peças com desvio em ' + E.fint(ex.sa[0]) + ' avaliadas ' + o.exA + ' = <b>' + E.fp(ex.a) + '</b>; ' + o.exB + ' foram ' + E.fint(ex.sb[1]) + ' em ' + E.fint(ex.sb[0]) + ' = <b>' + E.fp(ex.b) + '</b>. A diferença, ' + pts(ex.dl) + ', é o quanto ' + (ex.dl > 0 ? 'subiu' : 'caiu') + '.' : '') + ' <span class="smv-min">Só entram itens com pelo menos ' + minAm + ' peças avaliadas em cada lado.</span>';
     return { name: 'Quem mudou', kick: o.kick, ch: o.ch, keys: o.keys || [], dur: 16000,
-      note: 'Aqui estão os itens que mais subiram e os que mais caíram ' + o.cmpTxt + '. Cada porcentagem é o total ' + o.per + ': soma das peças com defeito dividida pela soma das peças avaliadas ' + o.how + (o.single ? '' : ' — não é média de dias nem o pior dia') + '. Embaixo de cada barra estão as peças: quantas tiveram defeito e quantas foram avaliadas.',
+      note: 'Aqui estão os itens que mais subiram e os que mais caíram ' + o.cmpTxt + '. Cada porcentagem é o total ' + o.per + ': soma das peças com desvio dividida pela soma das peças avaliadas ' + o.how + (o.single ? '' : ' — não é média de dias nem o pior dia') + '. Embaixo de cada barra estão as peças: quantas tiveram desvio e quantas foram avaliadas.',
       r: function (el) {
         el.innerHTML = '<div class="sl-c">' + slTitle(o.kick, o.title || 'Quem mais mudou', esc(o.lblB) + ' → ' + esc(o.lblA)) +
           '<div class="smv-how"><i>' + I('info') + '</i><p>' + how + '</p></div>' +
@@ -7093,7 +7086,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     if (o.streak >= 2) out.push('está acima de 10% há <b>' + o.streak + ' dias seguidos</b>');
     if (up) out.push('<b>vem piorando</b>: sobe cerca de ' + E.f1(sl) + ' ponto por dia (ex.: de ' + E.fp(cur) + ' para ' + E.fp(Math.min(100, cur + sl)) + ')');
     if (dn) out.push('<b>vem melhorando</b>: cai cerca de ' + E.f1(sl) + ' ponto por dia');
-    out.push('no período, <b>' + E.fp(o.lvl) + '</b> ' + (ev ? 'de ineficiência' : 'das peças avaliadas tiveram defeito') + ' (' + E.fint(o.nc) + ' de ' + E.fint(o.am) + ')');
+    out.push('no período, <b>' + E.fp(o.lvl) + '</b> ' + (ev ? 'de ineficiência' : 'das peças avaliadas tiveram desvio') + ' (' + E.fint(o.nc) + ' de ' + E.fint(o.am) + ')');
     return out;
   }
   function agendaSlide(chs, title, kick, sub) {
@@ -7155,14 +7148,6 @@ if (typeof module !== 'undefined') module.exports = RECO;
     var stOf = function (a, b, lowGood) { return a == null || b == null ? 'none' : a === b ? 'flat' : (a < b) === lowGood ? 'better' : 'worse'; };
     var card = function (k, st, lbl, val, txt, bef) { return '<div class="pst-c st-' + st + '" style="--k:' + k + '"><span class="pst-l">' + lbl + '</span><b class="num">' + val + '</b><p>' + txt + '</p>' + (bef ? '<em>' + bef + '</em>' : '') + '</div>'; };
     var nR = FP.one.r != null ? Math.round(FP.one.r * 100) : null, nL = FP.relR != null ? Math.round(FP.relR * 100) : null;
-    deck.push({ name: 'Quanto dura um desvio', kick: K, ch: ch, keys: [], dur: 15000, note: 'Quando um item passa de 10%, quanto tempo ele fica acima? Metade das vezes ele volta para baixo de 10% em até ' + fdias(FP.medR) + '. ' + (nR != null ? 'Em ' + nR + ' de cada 100 vezes ele já está abaixo no dia seguinte. ' : '') + (nL != null ? 'Mas ' + nL + ' de cada 100 itens que voltam para baixo passam de 10% de novo em até 5 dias: a correção nem sempre se sustenta.' : ''), r: function (el) {
-      el.innerHTML = '<div class="sl-c cover">' + slTitle(K, 'Quanto tempo um desvio dura', 'quando um item passa de 10%, quanto tempo ele fica acima · últimos 90 dias de produção do ' + TL(ts) + ', comparados com os 90 dias anteriores') + '<div class="pst">' +
-        card(0, open.length ? 'worse' : 'better', 'Acima de 10% agora', cu(open.length, 'i'), open.length === 1 ? 'item está acima de 10% neste turno.' : 'itens estão acima de 10% neste turno.', '') +
-        card(1, stOf(FP.medR, FP.medP, true), 'Quanto costuma durar', (FP.medR == null ? '—' : cu(FP.medR, 'i')) + '<small> ' + (FP.medR === 1 ? 'dia' : 'dias') + '</small>', 'Metade das vezes, o item volta para baixo de 10% em até ' + fdias(FP.medR) + '.', '90 dias antes: ' + fdias(FP.medP)) +
-        card(2, stOf(FP.one.r, FP.one.p, false), 'Resolvidos no dia seguinte', (nR == null ? '—' : cu(nR, 'i')) + '<small>%</small>', nR == null ? 'Sem casos suficientes.' : 'De cada 100 vezes que um item passou de 10%, em <b>' + nR + '</b> ele já estava abaixo no dia seguinte.', '90 dias antes: ' + pct0(FP.one.p)) +
-        card(3, stOf(FP.relR, FP.relP, true), 'Voltam em até 5 dias', (nL == null ? '—' : cu(nL, 'i')) + '<small>%</small>', nL == null ? 'Sem casos suficientes.' : 'De cada 100 itens que voltaram para baixo de 10%, <b>' + nL + '</b> passaram de 10% de novo em até 5 dias.', '90 dias antes: ' + pct0(FP.relP)) + '</div>' +
-        (open[0] ? '<p class="sl-lead">Há mais tempo acima de 10%: <b>' + esc(open[0].it.title) + '</b>, há <b>' + fdias(open[0].open.len).replace('dias', 'dias seguidos') + '</b>' + (open[0].typ != null ? ' — normalmente ele volta para baixo em ' + fdias(open[0].typ) + '.' : '.') + '</p>' : '') + '</div>';
-    } });
     if (open.length) deck.push({ name: 'Abertos agora', kick: K, ch: ch, keys: ['ps-open'], note: 'Estes itens estão acima de 10% há dias seguidos. A barra é há quantos dias; o traço claro é quanto tempo cada um normalmente fica acima. Quem passou do traço está mais teimoso que o normal e precisa de uma ação diferente.', r: function (el) {
       var mx = Math.max.apply(null, open.slice(0, 7).map(function (o) { return Math.max(o.open.len, o.typ || 1); }).concat([5])) * 1.05;
       el.innerHTML = '<div class="sl-c">' + slTitle(K, 'Quem está acima de 10% há mais tempo', 'barra = há quantos dias seguidos o item está acima de 10% · traço claro = quanto tempo ele normalmente fica acima') + '<div class="sl-bars">' + open.slice(0, 7).map(function (o, k) {
@@ -7258,11 +7243,10 @@ if (typeof module !== 'undefined') module.exports = RECO;
   /* roteiro do dia: capa → o dia → alertas → persistência → prioridades */
   function roteiroDeck() {
     var deck = [], K = kickDay(), day = dayDeck();
-    var chs = [{ t: 'O dia', ic: 'panorama', x: 'como foi o ' + TL() + ' e o que mais mudou' }, { t: 'Alertas', ic: 'alert', x: 'sentinela e previsão do próximo turno' }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
+    var chs = [{ t: 'O dia', ic: 'panorama', x: 'como foi o ' + TL() }, { t: 'Alertas', ic: 'alert', x: 'sentinela e previsão do próximo turno' }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
     deck.push(titleSlide('Roteiro do dia', 'story', K));
     deck.push(chapterSlide(1, chs[0]));
     addCh(deck, day.filter(function (s2) { return s2.name === 'Ranking'; }), chs[0].t, 3);
-    addCh(deck, day.filter(function (s2) { return s2.name === 'Pioras e melhoras'; }), chs[0].t);
     deck.push(chapterSlide(2, chs[1]));
     addCh(deck, day.filter(function (s2) { return s2.name === 'Sentinela'; }), chs[1].t);
     try { addCh(deck, projDeck(chs[1].t), chs[1].t, 1); } catch (e) { console.error(e); }
@@ -7278,33 +7262,27 @@ if (typeof module !== 'undefined') module.exports = RECO;
     try { var good = C.signals().filter(function (s) { return s.good; })[0], vg = C.viradasAll(ts).filter(function (c) { return !c.worse && c.d <= d; })[0]; if (vg) msgs.push({ t: 'Boa notícia: ' + esc(vg.it.title) + ' caiu' + ' de patamar', x: 'desde ' + E.dm(DS.dates[vg.d]) + ': ' + E.f1(dispV(vg.it, vg.from)) + '% → ' + E.f1(dispV(vg.it, vg.to)) + '%', st: 'better' }); else if (good) msgs.push({ t: 'Boa notícia: ' + esc(good.it.title), x: esc(good.txt), st: 'better' }); } catch (e) { }
     return msgs.slice(0, 3);
   }
-  /* roteiro da semana: capa → a semana (quem mais mudou) → persistência → prioridades */
+  /* roteiro da semana: capa → a semana (quem está acima de 10% há mais tempo) → prioridades */
   function roteiroSemana() {
     var deck = [], ts = TS(), d = S.d, w = DS.weekOf(d), pws = prevWeekSame(d), pw = DS.weeks[w.idx - 1];
     var K = 'Semana ' + w.label + ' · ' + TL(ts);
     var chs = [{ t: 'A semana', ic: 'week', x: 'itens acima de 10% e taxa geral contra a semana anterior' }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
     deck.push(titleSlide('Roteiro da semana', 'week', K));
     deck.push(chapterSlide(1, chs[0]));
-    var A = { d0: w.d0, d1: d, ts: ts }, B = pws ? { d0: pws.d0, d1: pws.d1, ts: ts } : pw ? { d0: pw.d0, d1: pw.d1, ts: ts } : null;
-    if (B) deck.push(mudouSlide({ kick: K, ch: chs[0].t, A: A, B: B, lblA: 'esta semana', lblB: 'semana passada', per: 'da semana', how: rngHow(A, 'semana'), exA: 'nesta semana', exB: 'na semana anterior (mesmos dias)', cmpTxt: 'contra os mesmos dias da semana anterior', keys: ['w-list'] }));
-    try { addCh(deck, persistDeck('Persistência', { short: true }), 'Persistência'); } catch (e) { console.error(e); }
+    try { addCh(deck, persistDeck(chs[0].t, { short: true }), chs[0].t); } catch (e) { console.error(e); }
     try { var pr = priorDeck().slice(0, 2); if (pr.length) { deck.push(chapterSlide(2, chs[1])); addCh(deck, pr, chs[1].t); } } catch (e) { console.error(e); }
     return deck;
   }
-  /* roteiro do mês */
+  /* roteiro do mês: capa → a corrida e o pódio → quem está acima de 10% há mais tempo → prioridades */
   function roteiroMes() {
     var deck = [], ts = TS(), d = S.d, m = DS.monthOf(d), pms = prevMonthSame(d), pm = DS.months[m.idx - 1];
     var K = m.labelF + ' · ' + TL(ts);
-    var chs = [{ t: 'O mês', ic: 'mes', x: 'o que mais mudou contra o mesmo período do mês anterior' }, { t: 'A corrida', ic: 'race', x: 'quem liderou os desvios mês a mês' }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
+    var chs = [{ t: 'A corrida', ic: 'race', x: 'quem liderou os desvios mês a mês' }, { t: 'Prioridades', ic: 'target', x: 'onde agir primeiro e por quê' }];
     deck.push(titleSlide('Roteiro do mês', 'mes', K));
     deck.push(chapterSlide(1, chs[0]));
-    var A = { d0: m.d0, d1: d, ts: ts }, B = pms ? { d0: pms.d0, d1: pms.d1, ts: ts } : pm ? { d0: pm.d0, d1: pm.d1, ts: ts } : null;
-    var lbB = pms ? pms.m.labelF : pm ? pm.labelF : '';
-    if (B) deck.push(mudouSlide({ kick: K, ch: chs[0].t, A: A, B: B, lblA: m.labelF, lblB: lbB + (pms ? ' (mesmo período)' : ''), rB: lbB, per: 'do mês', how: rngHow(A, 'mes'), exA: 'em ' + m.labelF, exB: 'em ' + lbB + (pms ? ', no mesmo período,' : ''), cmpTxt: 'contra o mesmo período de ' + lbB, keys: ['m-dv'] }));
-    deck.push(chapterSlide(2, chs[1]));
-    try { addCh(deck, corridaDeck(chs[1].t, { mode: 'mes' }), chs[1].t); } catch (e) { console.error(e); }
+    try { addCh(deck, corridaDeck(chs[0].t, { mode: 'mes' }), chs[0].t); } catch (e) { console.error(e); }
     try { addCh(deck, persistDeck('Persistência', { short: true }), 'Persistência'); } catch (e) { console.error(e); }
-    try { var pr = priorDeck().slice(0, 2); if (pr.length) { deck.push(chapterSlide(3, chs[2])); addCh(deck, pr, chs[2].t); } } catch (e) { console.error(e); }
+    try { var pr = priorDeck().slice(0, 2); if (pr.length) { deck.push(chapterSlide(2, chs[1])); addCh(deck, pr, chs[1].t); } } catch (e) { console.error(e); }
     return deck;
   }
 
