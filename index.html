@@ -1944,6 +1944,86 @@ button,a,.pchip,.leaf{-webkit-tap-highlight-color:transparent}
 :root[data-theme="light"] .fp-ic{background:linear-gradient(135deg,#006fb0,#0a8f6a);color:#fff}
 :root[data-theme="light"] .pr-fl{background:#e3f2ff;border-color:#0a7fc0;color:#005b91}
 
+/* ======================= PREVISÃO 2.0 · margem de erro, porquê, cenários ======================= */
+.pj-yv{font-size:.95rem;font-weight:650;color:var(--tx2)}
+.pj-yv b{font-size:1.25rem;color:var(--tx)}
+.pjh,.pjr{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) 5.2rem 3rem;gap:.6rem;align-items:center}
+.pjh{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);padding:0 .35rem .3rem;border-bottom:1px solid var(--line);flex:none}
+.pjh span:nth-child(n+3){text-align:right}
+.pjl{flex:1;min-height:0;display:flex;flex-direction:column}
+.pjr{height:var(--rh,2.6rem);padding:0 .35rem;border-radius:10px;cursor:pointer;position:relative;animation:slidein .55s both;animation-delay:calc(var(--k,0)*35ms + 60ms)}
+.pjr+.pjr{border-top:1px solid var(--line)}
+.pjr:hover{background:var(--panel2)}
+.pjr.on{background:var(--accbg);box-shadow:inset 3px 0 0 var(--acc)}
+.pjv{display:flex;flex-direction:column;align-items:flex-end;line-height:1.1}
+.pjv b{font-size:.92rem;font-weight:800;color:var(--tx)}
+.pjv small{font-size:.62rem;color:var(--tx3);white-space:nowrap}
+.pjc{text-align:right;font-size:.86rem;font-weight:800;color:var(--c,var(--tx2))}
+.pjr.st-none .pjc{color:var(--tx3)}
+.pjb{position:relative;height:.95rem;border-radius:99px;background:var(--track)}
+.pjb-band{position:absolute;top:0;bottom:0;border-radius:99px;background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 35%,transparent),color-mix(in srgb,var(--acc) 55%,transparent));box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--acc) 60%,transparent);transform-origin:left;animation:growX .8s cubic-bezier(.2,.8,.2,1) both}
+.pjb-thr{position:absolute;top:-.2rem;bottom:-.2rem;width:2px;margin-left:-1px;background:var(--thr);border-radius:2px}
+.pjb-p{position:absolute;top:-.12rem;bottom:-.12rem;width:3px;margin-left:-1.5px;background:var(--tx);border-radius:3px;box-shadow:0 0 6px var(--acc)}
+.pjb-v{position:absolute;top:50%;width:.72rem;height:.72rem;margin:-.36rem 0 0 -.36rem;border-radius:50%;border:2px solid var(--bg0);animation:pop .5s .3s both}
+.pjb-v.in{background:var(--acc)}.pjb-v.up{background:var(--bad)}.pjb-v.dn{background:var(--good)}
+.pjw-top{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1rem;align-items:center;margin-bottom:.5rem}
+.pjw-big{display:flex;flex-direction:column}
+.pjw-big b{font-size:2.6rem;font-weight:800;line-height:1;color:var(--acc);text-shadow:0 0 24px var(--accbg)}
+.pjw-big span{font-size:.66rem;color:var(--tx3);margin-top:.2rem}
+.pjw-m{display:flex;flex-direction:column;gap:.25rem;font-size:.74rem;color:var(--tx2);line-height:1.4}
+.pjw-m b{color:var(--tx)}
+.pjw-mg{display:flex;align-items:baseline;gap:.45rem}
+.pjw-mg span{font-size:1.25rem;font-weight:800;font-variant-numeric:tabular-nums}
+.pjw-mg .up{color:var(--bad)}.pjw-mg .dn{color:var(--good)}
+.pjw-mg em{font-style:normal;font-size:.7rem;color:var(--tx3)}
+.pjw-chips{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.4rem}
+.pjw-h{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--tx3);margin:.6rem 0 .3rem;padding-top:.45rem;border-top:1px solid var(--line)}
+.pjw-l{display:flex;flex-direction:column;gap:2px}
+.pjw-r{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) 3.6rem;gap:.55rem;align-items:center;padding:.28rem .4rem;border-radius:8px;font-size:.76rem;animation:slidein .5s both}
+.pjw-r:nth-child(odd){background:var(--panel2)}
+.pjw-t{color:var(--tx2);line-height:1.3}
+.pjw-t small{display:block;font-size:.64rem;color:var(--tx3);margin-top:.1rem}
+.pjw-r>b{text-align:right;font-weight:800}
+.pjw-b>b{color:var(--tx2)}
+.pjw-t-{color:var(--tx)}
+.pjw-t>b{color:var(--tx)}
+.pjw-r.pjw-t{background:var(--accbg)}
+.pjw-r.pjw-t>b{color:var(--acc);font-size:.95rem}
+.pjw-bar{position:relative;height:.6rem}
+.pjw-bar:before{content:"";position:absolute;left:50%;top:-.15rem;bottom:-.15rem;width:1px;background:var(--line2)}
+.pjw-bar.nb:before{display:none}
+.pjw-bar i{position:absolute;top:0;bottom:0;border-radius:4px;transform-origin:left;animation:growX .7s both}
+.pjw-bar i.up{left:50%;background:var(--bad)}
+.pjw-bar i.dn{right:50%;background:var(--good);transform-origin:right}
+.pjw-c .num{color:var(--tx)}
+.pjw-p{display:flex;flex-direction:column;gap:.2rem;padding:.45rem .6rem;border-radius:10px;border-left:3px solid var(--flat);background:var(--panel2);margin-bottom:.35rem;font-size:.74rem;line-height:1.45;color:var(--tx2)}
+.pjw-p b{color:var(--tx);font-size:.8rem}
+.pjw-p em{font-style:normal;font-size:.66rem;color:var(--tx3)}
+.tmr{display:grid;grid-template-columns:1.2rem minmax(0,1.35fr) minmax(0,.9fr) 4.2rem;gap:.55rem;align-items:center;height:var(--rh,2.4rem);padding:0 .3rem;border-radius:9px;cursor:pointer;animation:slidein .5s both;animation-delay:calc(var(--k,0)*35ms)}
+.tmr+.tmr{border-top:1px solid var(--line)}
+.tmr:hover{background:var(--panel2)}
+.tmr-i{font-weight:900;text-align:center;color:var(--c)}
+.tmr.st-better .tmr-i{color:var(--acc)}
+.tmr .rk-name span b{color:var(--tx)}
+.tmr-e{display:flex;flex-direction:column;align-items:flex-end;line-height:1.05;font-weight:800;font-size:.84rem;color:var(--c)}
+.tmr.st-better .tmr-e{color:var(--tx2)}
+.tmr-e small{font-size:.56rem;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.04em}
+.tm-l{flex:1;min-height:0;display:flex;flex-direction:column}
+.sim-c{display:flex;gap:.45rem;align-items:center;flex-wrap:wrap;flex:none;margin-bottom:.4rem}
+.sim-c select.sel{max-width:none;flex:1;min-width:10rem}
+.sim-m{display:flex;gap:.45rem;align-items:flex-start;font-size:.72rem;line-height:1.45;color:var(--tx2);padding:.45rem .6rem;border-radius:10px;background:var(--flatbg);border:1px solid color-mix(in srgb,var(--flat) 35%,transparent);flex:none;margin-bottom:.35rem}
+.sim-m svg{width:1rem;height:1rem;flex:none;color:var(--flat);margin-top:.1rem}
+.sim-m b{color:var(--tx)}
+.sim-l{flex:1;min-height:0}
+.simr{display:grid;grid-template-columns:minmax(0,1.3fr) 7.4rem 3.2rem 6rem;gap:.5rem;align-items:center;padding:0 .3rem;border-radius:9px;cursor:pointer;animation:slidein .5s both;animation-delay:calc(var(--k,0)*50ms)}
+.simr+.simr{border-top:1px solid var(--line)}
+.simr:hover{background:var(--panel2)}
+.simv{font-size:.8rem;color:var(--tx2);text-align:right;white-space:nowrap}
+.simv b{color:var(--tx)}.simv i{font-style:normal;color:var(--tx3)}
+.simd{text-align:right;font-weight:800;color:var(--c,var(--tx2))}
+@container (max-width:560px){.pjh,.pjr{grid-template-columns:minmax(0,1fr) 4.6rem 2.6rem}.pjh span:nth-child(2),.pjr .pjb{display:none}.tmr{grid-template-columns:1.1rem minmax(0,1fr) 3.6rem}.tmr .pjb{display:none}.simr{grid-template-columns:minmax(0,1fr) 6.4rem 2.8rem}.simr .chip{display:none}.pjw-top{grid-template-columns:minmax(0,1fr)}}
+:root[data-theme="light"] .pjb-band{background:linear-gradient(90deg,rgba(0,103,192,.25),rgba(0,103,192,.45))}
+:root[data-theme="light"] .pjb-p{background:#04112b;box-shadow:none}
 </style>
 </head>
 <body>
@@ -2943,7 +3023,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
       for (var j = P.length - N; j < P.length; j++) {
         var pr = self.praw(c.it.id, c.t, j); if (!pr) continue;
         var hist = P.slice(Math.max(0, j - 90), j), hh = 0; hist.forEach(function (p) { if (isHitV(c.it, p.v)) hh++; });
-        rows.push({ i: c.it.id, t: c.t, d: P[j].u.d, j: j, p: pr.p, x: logit(pr.p), y: isHitV(c.it, P[j].v) ? 1 : 0, clim: (hh + 0.5) / (hist.length + 1), pers: isHitV(c.it, P[j - 1].v) ? 1 : 0, v: P[j].v, pred: pr.f.pred });
+        rows.push({ i: c.it.id, t: c.t, d: P[j].u.d, j: j, p: pr.p, x: logit(pr.p), y: isHitV(c.it, P[j].v) ? 1 : 0, clim: (hh + 0.5) / (hist.length + 1), pers: isHitV(c.it, P[j - 1].v) ? 1 : 0, v: P[j].v, pred: pr.f.pred, lo: pr.f.lo, hi: pr.f.hi, prev: P[j - 1].v });
       }
     });
     if (rows.length < 200) return (this._cal = null);
@@ -2998,7 +3078,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
       var j = -1; for (var k = c.P.length - 1; k >= 0; k--) { if (c.P[k].u.d === d) { j = k; break; } if (c.P[k].u.d < d) break; }
       if (j < 30) return;
       var pr = self.praw(c.it.id, t, j); if (!pr) return;
-      out.push({ it: c.it, p: self.pcal(pr.p), pred: pr.f.pred, lo: pr.f.lo, hi: pr.f.hi, v: c.P[j].v, y: isHitV(c.it, c.P[j].v), prev: c.P[j - 1].v });
+      out.push({ it: c.it, p: self.pcal(pr.p), pred: pr.f.pred, lo: pr.f.lo, hi: pr.f.hi, v: c.P[j].v, y: isHitV(c.it, c.P[j].v), prev: c.P[j - 1].v, f: pr.f, am: c.P[j].am, nc: c.P[j].nc });
     });
     out.sort(function (a, b) { return b.p - a.p; });
     var exp = 0, real = 0, b = 0; out.forEach(function (o) { exp += o.p; real += o.y ? 1 : 0; b += (o.p - (o.y ? 1 : 0)) * (o.p - (o.y ? 1 : 0)); });
@@ -3293,6 +3373,354 @@ if (typeof module !== 'undefined') module.exports = RECO;
   var vaAll = CP.viradasAll;
   CP.viradasAll = function (ts) { var a = vaAll.call(this, ts), DS = this.DS; return DS.flt ? a.filter(function (c) { return DS.inF(c.i); }) : a; };
   X.FAMC = FAMC;
+})(INTEL, ENG);
+</script>
+<script>
+/* =====================================================================
+   MOTOR DE PREVISÃO 2.0 — previsão de cada item para o próximo T1 e T2
+   · ponto de partida: média móvel exponencial do próprio turno, com a "memória"
+     escolhida para cada item (a que menos errou no passado do item)
+   · em cima dela, uma regressão que aprende sozinha, turno após turno
+     (mínimos quadrados ponderados com esquecimento + ridge bayesiano):
+       - efeito do dia da semana                - tendência (subindo/caindo)
+       - o turno anterior (outro turno)          - a família de itens que andam juntos
+       - a planta toda no último turno           - as VARIÁVEIS DO PROCESSO (mapa abaixo)
+     o conhecimento do processo entra como "palpite inicial" (prior); os dados corrigem
+   · margem de erro conformal: quantis dos erros reais do próprio item (sem supor curva
+     normal), assimétrica (+X pontos pra mais / −Y pra menos), cobre ~8 em cada 10 turnos
+   · chance de ≥ 10%: distribuição dos erros passados suavizada (kernel)
+   · tudo "honesto": cada previsão antiga só usou o que havia antes daquele turno
+   ===================================================================== */
+(function (X, E) {
+  'use strict';
+  var CP = X.Ctx.prototype;
+  var WARM = 14, LAM = 0.985, N0 = 14, KEEP = 170, QLO = 0.1, QHI = 0.9;
+
+  /* ---------------- mapa do processo (conhecimento de chão de fábrica) ----------------
+     c = parâmetro/etapa que pode causar · e = desvio que aparece depois · w = força esperada */
+  var PMAP = [
+    { id: 'esc-temp', c: /temperatura da agua.*(escaldagem|tanque)/, e: /queimad|escaldagem|cozid/, w: 1, g: 'Temperatura da água da escaldagem',
+      m: 'Água do tanque acima da faixa — ou ave que fica parada dentro do tanque numa parada de linha — cozinha a camada de pele: o peito sai queimado e a carne aparece com "escaldagem" nos cortes e nos miúdos.' },
+    { id: 'esc-pena', c: /temperatura da agua.*(escaldagem|tanque)/, e: /pena|penugem|canhao|cuticul/, w: 0.7, g: 'Temperatura da água da escaldagem',
+      m: 'Água abaixo da faixa (ou pouco tempo no tanque) não afrouxa o folículo: a depenadeira não consegue tirar tudo e sobra pena, penugem e cutícula.' },
+    { id: 'dep-agua', c: /temperatura da agua nas depenadeiras/, e: /pena|penugem|canhao|cuticul|queimad|fratura.*asa/, w: 0.7, g: 'Água das depenadeiras',
+      m: 'Água fria nas depenadeiras deixa a pena presa; com a pena presa os dedos batem mais forte — sobra pena e aumenta fratura de asa. Água quente demais volta a cozinhar a pele.' },
+    { id: 'vapor', c: /manopla de vapor/, e: /cuticul|canela|calo|pes escuros|pigment/, w: 0.6, g: 'Vapor da canelinha',
+      m: 'O vapor da canelinha amolece a cutícula dos pés: vapor fora do ajuste deixa cutícula e escurece a pele das canelas.' },
+    { id: 'transf', c: /transferidor/, e: /fratura|corte dos pes|hematoma|perda/, w: 0.6, g: 'Transferidor',
+      m: 'Transferidor que falha força ou arranca a ave na troca de gancho: aumenta fratura de asa e hematoma, e o corte dos pés sai fora de posição.' },
+    { id: 'veloc', c: /velocidade da linha/, e: /fratura|hematoma|erro de corte|corte (da|para)|rompimento|contaminacao|nao (eviscerado|aberto)|extraid|perda/, w: 0.4, g: 'Velocidade da linha',
+      m: 'Com a linha acima da velocidade padrão cada etapa tem menos tempo e as máquinas trabalham fora do ponto: sobem erro de corte, rompimento e contaminação.' },
+    { id: 'extr', c: /extratora de cloaca/, e: /reto|cloaca|alca intestinal|contaminacao fecal/, w: 1, g: 'Extratora de cloaca',
+      m: 'Extratora de cloaca desregulada (ou ajustada para um tamanho de ave diferente do lote) corta errado e rompe o reto: vem contaminação fecal na sequência.' },
+    { id: 'abrid', c: /abertura de abdomen|abridora/, e: /abdomen|alca intestinal|contaminacao|nao eviscerado/, w: 1, g: 'Abertura de abdômen',
+      m: 'A abridora fora de ajuste corta fundo demais e rompe a alça intestinal (contaminação) ou não abre (ave não eviscerada).' },
+    { id: 'evisc', c: /ineficiencia evisceradora|maquina evisceradora/, e: /contaminacao (biliar|gastro|fecal) na evisceradora|miudo|nao eviscerado|vesicula|dilacer|integridade|sujidade/, w: 1, g: 'Evisceradora',
+      m: 'Evisceradora com ineficiência alta rompe vesícula e intestino (contaminação biliar e fecal), dilacera e perde miúdos — e o problema reaparece na seleção de miúdos.' },
+    { id: 'pq-cortes', c: /peito queimado/, e: /escaldagem/, w: 0.6, g: 'Peito queimado (escaldagem)',
+      m: 'O peito que sai queimado da escaldagem chega aos cortes como "escaldagem" no filé: é o mesmo problema, visto mais adiante na linha.' },
+    { id: 'fr-cortes', c: /fratura (branca|vermelha) na asa/, e: /fratura/, w: 0.5, g: 'Fratura de asa (depenagem)',
+      m: 'A fratura feita na depenadeira continua na asa até os cortes e a embalagem.' },
+    { id: 'pena-cortes', c: /presenca de pena/, e: /pena|penugem|canhao/, w: 0.5, g: 'Pena que sobra na depenagem',
+      m: 'Pena que escapa da depenagem segue pela linha e aparece de novo nos cortes e nos miúdos.' },
+    { id: 'cut-cortes', c: /presenca de cuticulas/, e: /cuticul/, w: 0.5, g: 'Cutícula que sobra na escaldagem',
+      m: 'Cutícula que sobra na escaldagem aparece de novo nos pés e nas canelas.' }
+  ];
+  X.PMAP = PMAP;
+
+  /* ---------------- utilidades ---------------- */
+  function clamp100(v) { return Math.max(0, Math.min(100, v)); }
+  function quant(sorted, q) { var n = sorted.length; if (!n) return 0; var p = (n - 1) * q, lo = Math.floor(p), hi = Math.ceil(p); return sorted[lo] + (sorted[hi] - sorted[lo]) * (p - lo); }
+  function solve(M, rhs, K) {
+    var i, j, r;
+    for (i = 0; i < K; i++) M[i].push(rhs[i]);
+    for (i = 0; i < K; i++) {
+      var p = i, mx = Math.abs(M[i][i]);
+      for (r = i + 1; r < K; r++) if (Math.abs(M[r][i]) > mx) { mx = Math.abs(M[r][i]); p = r; }
+      if (mx < 1e-12) return null;
+      if (p !== i) { var tmp = M[i]; M[i] = M[p]; M[p] = tmp; }
+      for (r = i + 1; r < K; r++) { var f = M[r][i] / M[i][i]; if (!f) continue; for (j = i; j <= K; j++) M[r][j] -= f * M[i][j]; }
+    }
+    var x = new Array(K);
+    for (i = K - 1; i >= 0; i--) { var s = M[i][K]; for (j = i + 1; j < K; j++) s -= M[i][j] * x[j]; x[i] = s / M[i][i]; }
+    for (i = 0; i < K; i++) if (!isFinite(x[i])) return null;
+    return x;
+  }
+  function prevV(a, k) {
+    if (k - 1 >= 0 && !isNaN(a[k - 1])) return a[k - 1];
+    if (k - 2 >= 0 && !isNaN(a[k - 2])) return 0.6 * a[k - 2];
+    return null;
+  }
+
+  /* ---------------- unidades (dia × turno) e desvios do normal ---------------- */
+  CP.uix = function () {
+    if (this._uix) return this._uix;
+    var pos = {}; this.U.forEach(function (u, k) { pos[u.d * 2 + u.t] = k; });
+    return (this._uix = { pos: pos, n: this.U.length });
+  };
+  /* para cada dia×turno: quanto o item ficou acima (+) ou abaixo (−) do normal do próprio turno */
+  CP.devU = function (i) {
+    var key = 'dv' + i; if (this._s[key]) return this._s[key];
+    var ux = this.uix(), a = new Float64Array(ux.n).fill(NaN), self = this;
+    [0, 1].forEach(function (t) {
+      var P = self.pts(i, t), s = null, n = 0;
+      P.forEach(function (p) { var k = ux.pos[p.u.d * 2 + t]; if (s != null && n >= 5 && k != null) a[k] = p.v - s; s = s == null ? p.v : s + 0.08 * (p.v - s); n++; });
+    });
+    return (this._s[key] = a);
+  };
+  /* taxa geral da planta (itens de qualidade, sem filtro) × o normal do turno */
+  CP.plantU = function () {
+    if (this._plU) return this._plU;
+    var DS = this.DS, U = this.U, a = new Float64Array(U.length).fill(NaN), sl = [null, null], n = [0, 0];
+    U.forEach(function (u, k) {
+      var t = u.t, am = DS.gA[t][u.d + 1] - DS.gA[t][u.d], nc = DS.gN[t][u.d + 1] - DS.gN[t][u.d];
+      if (!(am > 0)) return;
+      var v = nc / am * 100;
+      if (sl[t] != null && n[t] >= 5) a[k] = v - sl[t];
+      sl[t] = sl[t] == null ? v : sl[t] + 0.08 * (v - sl[t]); n[t]++;
+    });
+    return (this._plU = a);
+  };
+  /* ligações do mapa do processo que existem nesta base, para um item */
+  CP.plinks = function (i) {
+    var key = 'pl' + i; if (this._s[key]) return this._s[key];
+    var DS = this.DS, it = DS.items[i], self = this, out = [];
+    if (!this._plc) {
+      this._plc = DS.items.filter(function (c) { return self.pts(c.id, 0).length + self.pts(c.id, 1).length >= 60; })
+        .map(function (c) { return { it: c, txt: E.fold(c.param + ' ' + c.title), vol: DS.sum(c.id, 0, DS.nD - 1, [0, 1])[0] }; });
+    }
+    if (it.excl) return (this._s[key] = out);
+    var et = E.fold(it.param), seen = {};
+    PMAP.forEach(function (rule) {
+      if (!rule.e.test(et)) return;
+      self._plc.forEach(function (c) {
+        if (c.it.id === i || seen[c.it.id] || !rule.c.test(c.txt)) return;
+        if (c.it.sorder > it.sorder) return;
+        if (c.it.sf === it.sf && !c.it.excl && rule.c.test(E.fold(it.param))) return;
+        seen[c.it.id] = 1; out.push({ i: c.it.id, it: c.it, rule: rule, w: rule.w, vol: c.vol });
+      });
+    });
+    out.sort(function (a, b) { return b.w - a.w || b.vol - a.vol; });
+    return (this._s[key] = out.slice(0, 4));
+  };
+  /* qual é o próximo turno t e em que dia da semana cai */
+  CP.nextTarget = function (t) {
+    var DS = this.DS, L = DS.lastDay([0, 1]), iso = DS.dates[L];
+    if (t === 1 && !DS.has(L, [1])) return { iso: iso, w: E.dow(iso), t: t };
+    var sat = false; for (var d = Math.max(0, DS.nD - 70); d < DS.nD; d++) if (E.dow(DS.dates[d]) === 6 && DS.has(d, [t])) { sat = true; break; }
+    iso = E.addDays(iso, 1); while (E.dow(iso) === 0 || (E.dow(iso) === 6 && !sat)) iso = E.addDays(iso, 1);
+    return { iso: iso, w: E.dow(iso), t: t };
+  };
+
+  /* ---------------- o modelo de cada item × turno ---------------- */
+  CP.model = function (i, t) {
+    var key = 'md' + i + '|' + t; if (this._s[key] !== undefined) return this._s[key];
+    var self = this, DS = this.DS, it = DS.items[i], P = this.pts(i, t), nP = P.length;
+    if (nP < 25) return (this._s[key] = null);
+    var ux = this.uix(), U = this.U, own = this.devU(i), plant = this.plantU(), links = this.plinks(i);
+    var famD = [], famInfo = null;
+    try { var Fm = this.families(), fi = Fm.famOf[i]; if (fi != null) { famInfo = Fm.fams[fi]; famInfo.items.forEach(function (x) { if (x.id !== i) famD.push(self.devU(x.id)); }); } } catch (e) { }
+    var linkD = links.map(function (l) { return self.devU(l.i); });
+    /* memória da média móvel: a que menos errou na parte antiga do histórico do item */
+    var lamS = 0.1, bestE = Infinity;
+    [0.05, 0.1, 0.18, 0.3].forEach(function (l) {
+      var s = P[0].v, e = 0, c = 0, lim = Math.max(20, Math.floor(nP * 0.6));
+      for (var q = 1; q < lim; q++) { if (q >= 5) { e += (P[q].v - s) * (P[q].v - s); c++; } s += l * (P[q].v - s); }
+      if (c && e / c < bestE) { bestE = e / c; lamS = l; }
+    });
+    var F = [{ k: 'base', prior: 0 }, { k: 'dow', prior: 1 }, { k: 'mom', prior: 0.5 }, { k: 'outro', prior: 0.35 }, { k: 'fam', prior: famD.length ? 0.25 : 0 }, { k: 'geral', prior: 0.3 }];
+    links.forEach(function (l) { F.push({ k: 'lk', link: l, prior: 0.04 * l.w }); });
+    var K = F.length, th0 = F.map(function (f) { return f.prior; });
+    var A = [], b = new Array(K).fill(0), W = 0, nz = new Array(K).fill(0);
+    for (var r = 0; r < K; r++) A.push(new Array(K).fill(0));
+    var st = { slow: P[0].v, fast: P[0].v, dow: {} };
+    function feat(k, w) {
+      var x = new Array(K), oo = null, ox = 0, q, m;
+      x[0] = 1;
+      var dw = st.dow[w]; x[1] = dw ? dw.s / (dw.n + 6) : 0;
+      x[2] = st.fast - st.slow;
+      for (q = k - 1; q >= Math.max(0, k - 2); q--) if (U[q] && U[q].t !== t && !isNaN(own[q])) { ox = own[q]; oo = q; break; }
+      x[3] = ox;
+      var fs = 0, fn = 0; for (m = 0; m < famD.length; m++) { var fv = prevV(famD[m], k); if (fv != null) { fs += fv; fn++; } }
+      x[4] = fn ? fs / fn : 0;
+      var pv = prevV(plant, k); x[5] = pv == null ? 0 : pv;
+      for (m = 0; m < linkD.length; m++) { var lv = prevV(linkD[m], k); x[6 + m] = lv == null ? 0 : lv; }
+      return { x: x, oo: oo };
+    }
+    function solveTheta() {
+      if (W <= 0) return th0.slice();
+      var M = A.map(function (row) { return row.slice(); }), rhs = b.slice();
+      for (var q = 0; q < K; q++) { var al = N0 * (A[q][q] / W) + 1e-3; M[q][q] += al; rhs[q] += al * th0[q]; }
+      return solve(M, rhs, K) || th0.slice();
+    }
+    var preds = new Array(nP).fill(null), zs = new Array(nP).fill(null), contrib = {}, theta = th0.slice();
+    for (var j = 0; j < nP; j++) {
+      var p = P[j], k = ux.pos[p.u.d * 2 + t], w = p.u.w, fx = null;
+      if (j >= 5) fx = feat(k, w);
+      if (j >= WARM) {
+        if (j >= nP - KEEP || j % 4 === 0) theta = solveTheta();
+        var dev = 0; for (var q = 0; q < K; q++) dev += theta[q] * fx.x[q];
+        var pr = clamp100(st.slow + dev);
+        preds[j] = pr; zs[j] = (p.v - pr) / Math.sqrt(pr + 1);
+        if (j >= nP - KEEP) contrib[j] = { th: theta, x: fx.x, slow: st.slow, oo: fx.oo, w: w };
+      }
+      if (fx) {
+        var y = p.v - st.slow;
+        for (var q1 = 0; q1 < K; q1++) {
+          var xq = fx.x[q1]; if (q1 > 0 && Math.abs(xq) > 0.05) nz[q1]++;
+          b[q1] = LAM * b[q1] + xq * y;
+          for (var q2 = 0; q2 < K; q2++) A[q1][q2] = LAM * A[q1][q2] + xq * fx.x[q2];
+        }
+        W = LAM * W + 1;
+      }
+      if (j >= 3) { var dd = st.dow[w] || (st.dow[w] = { s: 0, n: 0 }); dd.s = dd.s * 0.98 + (p.v - st.slow); dd.n = dd.n * 0.98 + 1; }
+      st.slow += lamS * (p.v - st.slow); st.fast += 0.4 * (p.v - st.fast);
+    }
+    var nx = this.nextTarget(t), thL = solveTheta(), fl = feat(U.length, nx.w), devL = 0;
+    for (var qq = 0; qq < K; qq++) devL += thL[qq] * fl.x[qq];
+    var m = { it: it, t: t, P: P, preds: preds, zs: zs, contrib: contrib, F: F, links: links, fam: famInfo, lamS: lamS, nz: nz,
+      live: { pred: clamp100(st.slow + devL), th: thL, x: fl.x, slow: st.slow, oo: fl.oo, w: nx.w, iso: nx.iso } };
+    this._s[key] = m;
+    m.bt = this.btModel(m, 60);
+    return m;
+  };
+  /* margem de erro (conformal) e chance de ≥ 10% no ponto j (j = P.length → próximo turno) */
+  function band(m, j) {
+    var nP = m.P.length, pred = j >= nP ? m.live.pred : m.preds[j];
+    if (pred == null) return null;
+    var z = []; for (var q = Math.max(WARM, j - 90); q < j && q < nP; q++) if (m.zs[q] != null) z.push(m.zs[q]);
+    var s = Math.sqrt(pred + 1), n = z.length, lo, hi, p10;
+    if (n < 12) {
+      var sd = 1.2; lo = pred - 1.28 * sd * s; hi = pred + 1.28 * sd * s;
+      p10 = 1 - X.normCdf((9.95 - pred) / (sd * s));
+    } else {
+      z.sort(function (a, c) { return a - c; });
+      var a = Math.max(0.02, QLO - 0.5 / n);
+      lo = pred + quant(z, a) * s; hi = pred + quant(z, 1 - a) * s;
+      var mu = 0, v2 = 0; z.forEach(function (x) { mu += x; }); mu /= n; z.forEach(function (x) { v2 += (x - mu) * (x - mu); });
+      var h = Math.max(0.15, 1.06 * Math.sqrt(v2 / (n - 1)) * Math.pow(n, -0.2)), acc = 0;
+      z.forEach(function (x) { acc += 1 - X.normCdf((9.95 - (pred + x * s)) / (h * s)); });
+      p10 = acc / n;
+    }
+    lo = clamp100(Math.min(lo, pred)); hi = clamp100(Math.max(hi, pred));
+    return { pred: pred, lo: lo, hi: hi, p10: Math.max(0.002, Math.min(0.998, p10)) };
+  }
+  /* placar do próprio item nos últimos n turnos */
+  CP.btModel = function (m, n) {
+    var nP = m.P.length, e = 0, en = 0, cov = 0, up = 0, dn = 0, side = 0, c = 0, bias = 0;
+    for (var j = Math.max(WARM + 12, nP - n); j < nP; j++) {
+      var B = band(m, j); if (!B) continue;
+      var real = m.P[j].v; e += Math.abs(B.pred - real); en += Math.abs(m.P[j - 1].v - real); bias += real - B.pred;
+      if (real > B.hi + 1e-9) up++; else if (real < B.lo - 1e-9) dn++; else cov++;
+      if ((B.pred >= 9.95) === (real >= 9.95)) side++;
+      c++;
+    }
+    if (!c) return null;
+    var r = { mae: e / c, naive: en / c, cover: cov / c, up: up / c, dn: dn / c, side: side / c, bias: bias / c, n: c };
+    r.conf = r.cover >= 0.7 && r.mae <= 0.85 * r.naive ? 'alta' : r.mae <= r.naive ? 'média' : 'baixa';
+    return r;
+  };
+  CP.backtest = function (i, t, n) { var m = this.model(i, t); return m ? (n && n !== 60 ? this.btModel(m, n) : m.bt) : null; };
+
+  /* ---------------- explicação em português: de onde vem cada ponto ---------------- */
+  function explain(self, m, j) {
+    var nP = m.P.length, c = j >= nP ? m.live : m.contrib[j]; if (!c) return [];
+    var DS = self.DS, U = self.U, out = [];
+    m.F.forEach(function (f, q) {
+      var x = c.x[q], th = c.th[q], v = th * x; if (Math.abs(v) < 0.05) return;
+      var o = { k: f.k, val: v, x: x, th: th };
+      if (f.k === 'base') { o.s = 'ajuste do item'; o.lbl = 'Ajuste do item: costuma vir um pouco ' + (v > 0 ? 'acima' : 'abaixo') + ' da média recente'; }
+      else if (f.k === 'dow') { o.s = E.DOWF[c.w] + ' costuma vir ' + (v > 0 ? 'pior' : 'melhor'); o.lbl = 'Dia da semana: ' + E.DOWF[c.w] + ' costuma vir ' + (v > 0 ? 'acima' : 'abaixo') + ' do normal deste item'; }
+      else if (f.k === 'mom') { o.s = v > 0 ? 'vem subindo' : 'vem caindo'; o.lbl = 'Tendência: ' + (v > 0 ? 'vem subindo' : 'vem caindo') + ' nos últimos turnos'; }
+      else if (f.k === 'outro') {
+        var u = c.oo != null ? U[c.oo] : null, nm = u ? 'T' + (u.t + 1) + ' de ' + E.dlabel(DS.dates[u.d]) : 'turno anterior';
+        o.s = nm + ' veio ' + (x > 0 ? 'alto' : 'baixo'); o.lbl = 'O ' + nm + ' veio ' + E.fpp(x) + ' ' + (x > 0 ? 'acima' : 'abaixo') + ' do normal';
+        o.det = 'O mesmo lote de aves, as mesmas regulagens e as mesmas máquinas passam de um turno para o outro: quando um turno sai do normal, o seguinte tende a acompanhar.';
+      }
+      else if (f.k === 'fam') { o.s = 'família ' + (m.fam ? m.fam.letter : '') + ' ' + (x > 0 ? 'subiu' : 'caiu'); o.lbl = 'Itens que andam junto com ele (família ' + (m.fam ? m.fam.letter : '') + ') vieram ' + (x > 0 ? 'acima' : 'abaixo') + ' do normal no último turno'; o.det = m.fam ? 'Família: ' + m.fam.items.slice(0, 5).map(function (z) { return z.title; }).join(', ') + '.' : ''; }
+      else if (f.k === 'geral') { o.s = 'planta ' + (x > 0 ? 'pior' : 'melhor') + ' no último turno'; o.lbl = 'A planta toda veio ' + (x > 0 ? 'pior' : 'melhor') + ' que o normal no último turno (' + E.fpp(x) + ' na taxa geral)'; }
+      else if (f.k === 'lk') {
+        var l = f.link; o.s = l.it.title + (x > 0 ? ' fora do padrão' : ' melhor que o normal');
+        o.lbl = l.it.title + ': ' + (x > 0 ? E.fpp(x) + ' a mais de medições fora do padrão' : 'melhor que o normal (' + E.fpp(x) + ')') + ' no último turno';
+        o.det = l.rule.m; o.link = l;
+      }
+      out.push(o);
+    });
+    out.sort(function (a, b) { return Math.abs(b.val) - Math.abs(a.val); });
+    return out;
+  }
+
+  /* ---------------- previsão (substitui a antiga) ---------------- */
+  CP.forecast = function (i, t, cut) {
+    var m = this.model(i, t); if (!m) return null;
+    var nP = m.P.length, j = cut == null || cut >= nP ? nP : cut;
+    if (j < WARM + 10) return null;
+    var B = band(m, j); if (!B) return null;
+    var live = j >= nP, c = live ? m.live : m.contrib[j];
+    return { pred: B.pred, lo: B.lo, hi: B.hi, p10: B.p10, mlo: B.pred - B.lo, mhi: B.hi - B.pred, sd: (B.hi - B.lo) / 2.56,
+      level: c ? c.slow : B.pred, dow: live ? m.live.w : m.P[j].u.w, iso: live ? m.live.iso : DS0(this, m.P[j].u.d), factor: 1, n: nP, it: m.it, live: live, j: j,
+      why: c ? explain(this, m, j) : [], links: m.links, bt: m.bt, conf: m.bt ? m.bt.conf : 'baixa', lamS: m.lamS };
+  };
+  function DS0(self, d) { return self.DS.dates[d]; }
+  /* chance bruta (antes da calibração final) */
+  CP.praw = function (i, t, j) {
+    var f = this.forecast(i, t, j); if (!f) return null;
+    return { p: f.p10, f: f };
+  };
+
+  /* ---------------- placar geral: previsto × real nos últimos dias ---------------- */
+  CP.score = function (nDays) {
+    var C = this.calib(); if (!C) return null;
+    var DS = this.DS, days = DS.lastNDays(DS.nD - 1, nDays || 30, [0, 1]), d0 = days[0];
+    function agg(R) {
+      var o = { n: R.length, inside: 0, up: 0, dn: 0, side: 0, mae: 0, naive: 0, mlo: 0, mhi: 0 };
+      R.forEach(function (r) {
+        if (r.v > r.hi + 1e-9) o.up++; else if (r.v < r.lo - 1e-9) o.dn++; else o.inside++;
+        if ((r.pred >= 9.95) === (r.v >= 9.95)) o.side++;
+        o.mae += Math.abs(r.v - r.pred); o.naive += Math.abs(r.v - r.prev); o.mlo += r.pred - r.lo; o.mhi += r.hi - r.pred;
+      });
+      if (o.n) { o.cover = o.inside / o.n; o.sideP = o.side / o.n; o.mae /= o.n; o.naive /= o.n; o.mlo /= o.n; o.mhi /= o.n; }
+      return o;
+    }
+    var R = C.rows.filter(function (r) { return r.d >= d0 && DS.inF(r.i) && r.hi != null; });
+    var L = DS.lastDay([0, 1]);
+    return { all: agg(R), days: days.length, last: L, t1: agg(R.filter(function (r) { return r.d === L && r.t === 0; })), t2: agg(R.filter(function (r) { return r.d === L && r.t === 1; })) };
+  };
+
+  /* ---------------- simulador "e se...?" ---------------- */
+  CP.simCauses = function (t) {
+    var self = this, map = {};
+    this.cand().forEach(function (c) {
+      if (c.t !== t) return;
+      var m = self.model(c.it.id, t); if (!m) return;
+      m.links.forEach(function (l) {
+        var o = map[l.i] || (map[l.i] = { i: l.i, it: l.it, rules: [], n: 0 });
+        if (o.rules.indexOf(l.rule) < 0) o.rules.push(l.rule); o.n++;
+      });
+    });
+    return Object.keys(map).map(function (k) { return map[k]; }).sort(function (a, b) { return a.it.sorder - b.it.sorder || b.n - a.n; });
+  };
+  CP.simLevels = function (cid) {
+    var a = this.devU(cid), pos = []; for (var k = 0; k < a.length; k++) if (a[k] > 0.5) pos.push(a[k]);
+    pos.sort(function (x, y) { return x - y; });
+    var alto = pos.length >= 8 ? quant(pos, 0.75) : 8, crit = Math.max(pos.length >= 8 ? quant(pos, 0.97) : 20, alto * 1.6, 12);
+    return { alto: Math.max(3, alto), critico: crit, n: pos.length };
+  };
+  CP.simulate = function (cid, lvl, t) {
+    var self = this, Lv = this.simLevels(cid), tgt = lvl === 'critico' ? Lv.critico : Lv.alto, out = [];
+    this.cand().forEach(function (c) {
+      if (c.t !== t) return;
+      var m = self.model(c.it.id, t); if (!m) return;
+      var q = -1; m.F.forEach(function (f, k) { if (f.k === 'lk' && f.link.i === cid) q = k; });
+      if (q < 0) return;
+      var f0 = self.forecast(c.it.id, t); if (!f0) return;
+      var dx = tgt - Math.max(0, m.live.x[q]), th = m.live.th[q], dl = th * Math.max(0, dx);
+      var np = clamp100(f0.pred + dl);
+      out.push({ it: c.it, pred: f0.pred, np: np, dl: np - f0.pred, th: th, data: m.nz[q] >= 15, nz: m.nz[q], rule: m.F[q].link.rule, cross: f0.pred < 9.95 && np >= 9.95 });
+    });
+    out.sort(function (a, b) { return b.dl - a.dl; });
+    return { rows: out, lv: Lv, tgt: tgt };
+  };
 })(INTEL, ENG);
 </script>
 <script>
@@ -4617,7 +5045,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     'x-brk': { t: 'Detalhe do dia', x: 'Quando o item tem vários produtos ou linhas, mostra o % de cada um (a soma deles dá o total). Se não tiver, mostra os últimos lançamentos dia a dia com NC/amostra.', k: ['detalhe do dia', 'quebra', 'produto', 'pacote', 'bandeja'] },
     'x-dow': { t: 'Perfil por dia da semana', x: 'Junta as últimas 13 semanas e mostra em <b>qual dia da semana</b> o item costuma ser pior. Se segunda sempre é alta, por exemplo, pode ser algo da partida da semana (limpeza, regulagem, equipe).', ex: 'Barra mais alta na sexta = o item costuma piorar nas sextas.', k: ['perfil por dia da semana', 'dia da semana', 'perfil'] },
     'x-stat': { t: 'Termômetro', x: 'Um resumo de "febre" do item nos últimos 30 dias: em <b>quantos dias</b> ele passou de 10%, há quantos dias seguidos está acima (ou abaixo) do corte, qual foi o pior dia e a <b>previsão</b> para o próximo turno.', ex: '"Dias ≥ corte 18 / 30" = passou de 10% em 18 dos últimos 30 dias: item crônico.', k: ['termometro', 'termômetro', 'febre'] },
-    'x-prev': { t: 'Previsão do próximo turno', x: 'Estimativa do % no próximo T1 e T2, usando o nível recente do item e o comportamento típico daquele dia da semana. É uma tendência, não uma certeza.', k: ['previsao', 'previsão', 'proximo turno'] },
+    'x-prev': { t: 'Previsão do próximo turno', x: 'Estimativa do % no próximo T1 e T2 feita pelo motor de previsão: média recente do item, dia da semana, tendência, o turno anterior, os itens que andam junto, a planta toda e as variáveis do processo ligadas ao item. Vem sempre com margem de erro.', k: ['previsao', 'previsão', 'proximo turno'] },
 
     /* ---------- turno × turno ---------- */
     't-db': { t: 'Item a item: T1 × T2', x: 'Cada linha é um item. O ponto azul é o T1 e o roxo é o T2; o que brilha é o turno pior. O chip à direita diz qual turno ficou pior e por quantos p.p.', k: ['item a item', 'haltere'] },
@@ -4665,7 +5093,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
     'd-comp': { t: 'Comparar', x: 'Escolha livremente duas referências (dia, semana ou mês) e veja o valor de cada uma, a diferença em p.p. e as amostras. Os atalhos prontos montam as comparações mais comuns.', k: ['comparar livre', 'comparacao livre'] },
     'd-hist': { t: 'Histórico', x: 'Calendário de calor do item, recordes e sequências, e a evolução desde o início.', k: [] },
     /* ---------- previsão ---------- */
-    'v-proj': { t: 'Previsão do próximo turno', x: 'A chance de cada item passar de 10% no próximo turno, já <b>testada no passado</b>: o Radar previu centenas de turnos antigos sem ver a resposta e mostra quanto acertou. Tem a máquina do tempo para conferir qualquer dia que já passou.', k: ['previsao', 'previsão', 'proximo turno', 'próximo turno', 'projecoes', 'projeções'] },
+    'v-proj': { t: 'Previsão do próximo turno', x: 'O que deve acontecer no próximo T1 e T2, item a item, com <b>margem de erro</b> como numa pesquisa eleitoral (+X pontos pra mais / −Y pra menos). Cada número mostra a conta por trás dele, as variáveis do processo, o placar de acertos e erros no passado e um simulador de cenários (e se uma máquina sair do padrão?). Não é adivinhação: é o que o histórico de cada turno indica.', k: ['previsao', 'previsão', 'proximo turno', 'próximo turno', 'projecoes', 'projeções', 'margem de erro'] },
     'cx-strip': { t: 'Contexto do dia', x: 'Seis leituras rápidas da base diária para enquadrar o turno: a previsão do próximo turno, o desvio que está há mais tempo acima de 10%, a última virada de patamar, a família de desvios mais aquecida, a posição do dia no mês e os alertas da Sentinela. Toque num quadro para abrir a tela de detalhe.', k: ['contexto'] },
     'cx-risco': { t: 'Previsão do próximo turno', x: 'Soma das chances de cada item passar de 10% no próximo turno. A faixa mostra entre quantos itens o resultado deve ficar (80% de confiança). As chances foram calibradas no passado.', k: [] },
     'cx-aberto': { t: 'Há mais tempo acima de 10%', x: 'O item que está há mais dias seguidos acima do corte, sem voltar para baixo. Embaixo, quanto costuma durar um episódio desse item. A evisceradora e os itens que ficam acima de 10% em quase todos os dias não entram aqui: para eles, a pergunta não é "quando sai", e sim "por que nunca sai".', k: [] },
@@ -4673,10 +5101,15 @@ if (typeof module !== 'undefined') module.exports = RECO;
     'cx-fam': { t: 'Família mais aquecida', x: 'A família de desvios (itens que sobem e descem juntos) com mais membros acima do próprio normal no turno escolhido. Quando vários membros sobem juntos, a causa costuma ser uma só.', k: [] },
     'cx-pos': { t: 'Posição do dia', x: 'Como este dia se compara com os outros dias do mês e dos últimos 12 meses, pela quantidade de itens acima de 10% no mesmo turno. 1º = o pior.', k: ['posicao', 'posição', 'ranking do dia'] },
     'cx-sent': { t: 'Sentinela', x: 'Quantos alertas estatísticos estão ativos (picos, sequências, tendências) e quantas melhoras sustentadas a Sentinela encontrou nos últimos turnos.', k: [] },
-    'pj-risk': { t: 'Próximo turno', x: 'Para cada item avaliado nos últimos 10 dias: a chance de passar de 10% no próximo turno. O cálculo usa o nível recente do item, o efeito do dia da semana e a oscilação típica, e depois é <b>calibrado</b> com o passado. O número grande é a soma das chances = quantos itens devem passar.', k: [] },
+    'pj-risk': { t: 'Próximo turno', x: 'Para cada item avaliado nos últimos 10 dias: o valor previsto, a <b>margem de erro</b> e a chance de passar de 10%. A barra azul é a faixa provável (o real caiu dentro dela em 8 de cada 10 turnos no passado); o traço é a previsão; a linha amarela é o corte de 10%. O número grande do topo é a soma das chances = quantos itens devem passar de 10%.', ex: 'Peito queimado 12,1% (+3,8 / −2,9): o esperado é 12,1%, mas pode ir até 15,9% ou cair até 9,2%.', k: [] },
     'pj-pr': { t: 'Previsto × real', x: 'Para cada turno testado, o Radar previu quantos itens passariam de 10% usando só os dados de antes daquele turno. A linha amarela é o que aconteceu. Toque num ponto para abrir aquele dia na máquina do tempo.', k: [] },
     'pj-rel': { t: 'O Radar acerta?', x: 'Gráfico de confiabilidade: se o Radar fosse perfeito, os pontos ficariam sobre a diagonal (quando diz 30%, acontece 30%). A calibração foi ajustada na metade mais antiga do teste e conferida na metade mais nova, que o modelo nunca viu. AUC mede se ele separa bem quem passa de quem não passa (1 = perfeito, 0,5 = sorteio).', k: ['confiabilidade', 'calibracao', 'calibração', 'auc'] },
-    'pj-tm': { t: 'Máquina do tempo', x: 'Escolha um dia que já passou. O Radar faz a previsão como se estivesse na véspera, sem ver a resposta, e mostra o que aconteceu: ✓ acertou (deu ≥ 50% e passou, ou deu &lt; 50% e não passou), ✗ errou.', k: ['maquina do tempo', 'máquina do tempo', 'replay'] },
+    'pj-tm': { t: 'Máquina do tempo · previsto × real', x: 'Escolha um dia que já passou (abre no último dia lançado). Para cada item: o que o Radar previu na véspera, sem ver a resposta, a margem que ele deu e o que aconteceu. <b>✓</b> = caiu dentro da margem · <b>▲</b> = veio pior que a margem · <b>▼</b> = veio melhor. O número à direita é o erro em pontos (real − previsto).', ex: 'previsto 8,4% (+2,6 / −2,0) · real 9,9% → +1,5 ponto, dentro da margem ✓.', k: ['maquina do tempo', 'máquina do tempo', 'replay', 'ontem', 'previsto x real', 'acertos e erros'] },
+    'pj-score': { t: 'Placar do Radar', x: 'Todas as previsões dos últimos 30 dias conferidas com o que aconteceu. <b>Dentro da margem</b>: em quantas o real caiu na faixa prevista (a meta é 80% — se ficar muito acima, a margem está larga demais; muito abaixo, estreita demais). <b>Acertou o lado dos 10%</b>: disse que passaria e passou, ou disse que não e não passou.', k: ['placar', 'acertos', 'erros', 'margem de erro'] },
+    'pj-why': { t: 'Por que esse número?', x: 'A conta da previsão, parte por parte. Começa na média recente do item naquele turno e soma (ou tira) cada efeito que o Radar aprendeu com os dados: dia da semana, tendência, como veio o outro turno (mesmo lote de aves e mesmas máquinas), itens que andam junto, a planta toda e as <b>variáveis do processo</b> (temperatura da escaldagem, evisceradora, velocidade da linha…). Vermelho empurra para cima (piora), verde para baixo.', k: ['por que', 'porque', 'explicacao', 'explicação', 'variaveis', 'variáveis'] },
+    'pj-fan': { t: 'Previsto × real no tempo', x: 'A faixa azul é a margem que o Radar deu na véspera para cada turno; o ponto é o que aconteceu. Ponto azul = dentro da margem; vermelho = veio pior que a margem; verde = veio melhor. O último ponto (anel) é a previsão do próximo turno.', k: ['faixa', 'previsto x real'] },
+    'pj-sim': { t: 'E se…? Simulador de cenário', x: 'Escolha uma variável do processo (temperatura da água da escaldagem, evisceradora, velocidade da linha, transferidor…) e um nível: <b>fora do padrão</b> (como num dia ruim comum) ou <b>quebrou / crítico</b> (como nos piores dias do histórico). O Radar mostra quanto cada item ligado a ela deve mudar no próximo turno, usando o peso que aprendeu nos dados — ou o peso esperado pelo processo, quando ainda há pouco histórico.', k: ['simulador', 'cenario', 'cenário', 'e se', 'maquina quebrar', 'máquina quebrar'] },
+    'pj-conf': { t: 'Confiança da previsão', x: '<b>Alta</b>: nos últimos 60 turnos o item caiu dentro da margem em 70% ou mais das vezes e o Radar errou bem menos que repetir o último valor. <b>Média</b>: errou menos que repetir o último valor. <b>Baixa</b>: o item é muito instável — use a margem, não o número exato.', k: ['confianca', 'confiança'] },
     /* ---------- viradas de patamar ---------- */
     'v-viradas': { t: 'Viradas de patamar', x: 'Encontra, sozinho, <b>as datas em que o nível de cada item mudou de verdade</b> e ficou no novo nível (não é pico de um dia). Para cada virada mostra o antes, o depois e a força da evidência. Serve para ligar a mudança a um fato real: troca de equipe, manutenção, regulagem, procedimento novo.', k: ['viradas', 'virada', 'patamar', 'mudanca de nivel', 'mudança de nível', 'quando mudou'] },
     'vr-lanes': { t: 'Linha do tempo dos níveis', x: 'Cada linha é um item. As faixas coloridas são os <b>níveis</b> em que ele ficou (a cor segue a mesma escala do mapa de calor: amarelo/vermelho = acima de 10%). ▲ vermelho = virou para pior · ▼ verde = virou para melhor. A linha vertical marca o dia escolhido. Toque num item para ver o detalhe.', k: ['linha do tempo', 'niveis', 'níveis'] },
@@ -4733,7 +5166,7 @@ if (typeof module !== 'undefined') module.exports = RECO;
   function colDefault() { return LAY.kind === 'tabl'; }
 
   /* ---------------- navegação (pilha de telas + botão voltar do sistema) ---------------- */
-  var NAV = [], NAVK = ['view', 'item', 'd', 'turno', 'calm', 'ttm', 'ttp', 'wkA', 'wkB', 'mA', 'mB', 'labm', 'labf', 'labx', 'sentTab', 'sentSel', 'focus', 'ov', 'pg', 'dcmp', 'projT', 'tmD', 'tmT', 'vrSel', 'psSel', 'fmSel', 'cxW', 'cxM'];
+  var NAV = [], NAVK = ['view', 'item', 'd', 'turno', 'calm', 'ttm', 'ttp', 'wkA', 'wkB', 'mA', 'mB', 'labm', 'labf', 'labx', 'sentTab', 'sentSel', 'focus', 'ov', 'pg', 'dcmp', 'projT', 'tmD', 'tmT', 'vrSel', 'psSel', 'fmSel', 'cxW', 'cxM', 'pjSel', 'pjTab'];
   var NAVDIR = '', skipPop = 0;
   function cloneV(v) { return v && typeof v === 'object' ? JSON.parse(JSON.stringify(v)) : v; }
   function snapNav() { var o = {}; NAVK.forEach(function (k) { o[k] = cloneV(S[k]); }); o.lbl = navLabel(); return o; }
@@ -6342,70 +6775,193 @@ if (typeof module !== 'undefined') module.exports = RECO;
     var gen = main._gen;
     setTimeout(function () { try { C.calib(); } catch (e) { console.error(e); C._cal = null; } if (main._gen === gen && after) after(); }, 140);
   }
-  /* ======================= TELA: PREVISÃO DO PRÓXIMO TURNO ======================= */
+  /* ======================= TELA: PREVISÃO DO PRÓXIMO TURNO (motor 2.0) ======================= */
+  function margTxt(f) { return '+' + E.f1(f.mhi) + ' / −' + E.f1(f.mlo); }
+  function pctTxt(v) { return v == null ? '—' : Math.round(v * 100) + '%'; }
+  function confChip(c) { return '<span class="chip st-' + (c === 'alta' ? 'better' : c === 'média' ? 'flat' : 'none') + '" data-info="pj-conf">confiança ' + c + '</span>'; }
+  function bandBar(f, mx, v) {
+    mx = mx || Math.max(20, f.hi * 1.1);
+    var cl = function (x) { return Math.max(0, Math.min(100, x / mx * 100)); };
+    var L = cl(f.lo), H = cl(f.hi);
+    var h = '<div class="pjb"><i class="pjb-band" style="left:' + L.toFixed(1) + '%;width:' + Math.max(0.8, H - L).toFixed(1) + '%"></i><i class="pjb-thr" style="left:' + cl(10).toFixed(1) + '%"></i><i class="pjb-p" style="left:' + cl(f.pred).toFixed(1) + '%"></i>';
+    if (v != null) h += '<i class="pjb-v ' + (v > f.hi + 1e-9 ? 'up' : v < f.lo - 1e-9 ? 'dn' : 'in') + '" style="left:' + cl(v).toFixed(1) + '%"></i>';
+    return h + '</div>';
+  }
   function vProj() {
     var C = CTX(), t = S.projT != null ? S.projT : nextShift().t;
     if (C._cal === undefined) {
-      mount(pnl(0, 'Previsão do próximo turno', 'preparando', '<div class="empty"><div><b>Testando o modelo no passado…</b>o Radar está prevendo cada turno antigo só com o que havia antes dele, para medir quanto acerta.<div class="g-bar" style="width:16rem;margin:1rem auto 0"><i></i></div></div></div>', {}), 'grid-template-columns:1fr');
+      mount(pnl(0, 'Previsão do próximo turno', 'preparando', '<div class="empty"><div><b>Testando o modelo no passado…</b>o Radar está prevendo cada turno antigo de cada item só com o que havia antes dele, para medir a margem de erro real de cada um.<div class="g-bar" style="width:16rem;margin:1rem auto 0"><i></i></div></div></div>', {}), 'grid-template-columns:1fr');
       calibLater(function () { if (S.view === 'proj') render(false); });
       return;
     }
-    var cal = C._cal, rk = C.risk(t);
+    var cal = C._cal;
     if (!cal) { mount(pnl(0, 'Previsão do próximo turno', '', emptyMsg('Pouco histórico para testar as previsões', 'São necessários ao menos 40 turnos por item.'), {}), 'grid-template-columns:1fr'); return; }
-    var ev = cal.eval;
-    var tmLast = DS.lastDay([0, 1]), tmD = S.tmD != null && S.tmD <= tmLast ? S.tmD : DS.prevDay(tmLast, [t], false); if (tmD < 0) tmD = tmLast;
-    var tmT = S.tmT != null ? S.tmT : t;
-    mount(pnl(0, 'Próximo T' + (t + 1) + (t === nextShift().t ? ' (' + nextShift().lbl + ')' : '') + ' · chance de passar de 10%', 'previsão calibrada no passado · itens avaliados nos últimos 10 dias', '', { icon: 'proj', bid: 'pj-risk', key: 'pj-risk', info: 'pj-risk', short: 'Próximo turno', mh: 24, fw: 2, style: 'grid-row:1/3', right: segHtml('pj-t', [['0', 'T1'], ['1', 'T2']], String(t)) }) +
-      pnl(1, 'Previsto × real · teste no passado', 'cada ponto é um turno: quantos itens o Radar esperava ≥ 10% (sem ver a resposta) × quantos foram', '', { icon: 'trend', bid: 'pj-pr', key: 'pj-pr', info: 'pj-pr', short: 'Previsto × real', mh: 16, right: '<div class="legend"><span><i style="background:var(--acc)"></i>previsto</span><span><i style="background:var(--flat)"></i>real</span></div>' }) +
-      pnl(2, 'O Radar acerta?', 'conferido em ' + E.fint(ev.n) + ' previsões que o modelo nunca viu', '', { icon: 'check', bid: 'pj-rel', key: 'pj-rel', info: 'pj-rel', short: 'Confiabilidade', mh: 16 }) +
-      pnl(3, 'Máquina do tempo', 'escolha um dia que já passou: o Radar prevê sem olhar a resposta', '', { icon: 'hist', bid: 'pj-tm', key: 'pj-tm', info: 'pj-tm', short: 'Máquina do tempo', mh: 18, style: 'grid-column:2/4' }),
-      'grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr) minmax(0,1.05fr)');
+    var rk = C.risk(t), nx = C.nextTarget(t), sc = C.score(30) || { all: { n: 0 }, t1: { n: 0 }, t2: { n: 0 }, days: 0 }, A = sc.all;
+    var rows = rk.rows, sel = null;
+    if (S.pjSel != null) sel = rows.filter(function (o) { return o.it.id === S.pjSel; })[0];
+    if (!sel) sel = rows[0];
+    var tmT = S.tmT != null ? S.tmT : 0, tmD = S.tmD != null && S.tmD <= DS.lastDay([0, 1]) ? S.tmD : DS.lastDay([tmT]);
+    var kp = function (i, st, ic, lbl, v, s2, info) { return '<section class="pnl kpi st-' + st + '" style="--i:' + i + '"><div class="kl">' + I(ic) + ' ' + lbl + infoBtn(info) + '</div><div class="kv">' + v + '</div><div class="ks">' + s2 + '</div></section>'; };
+    var yt = function (o) { return o.n ? o.inside + '/' + o.n : '—'; };
+    var kpis = '<div class="kpis k5" style="grid-area:k">' +
+      kp(0, 'none', 'proj', 'Próximo T' + (t + 1) + ' · ' + E.dlabel(nx.iso), '~' + cu(Math.round(rk.exp), 'i') + '<small>itens ≥ 10%</small>', 'faixa provável: ' + rk.lo + ' a ' + rk.hi + ' itens', 'pj-risk') +
+      kp(1, !A.n ? 'none' : A.cover >= 0.72 ? 'better' : A.cover >= 0.6 ? 'flat' : 'worse', 'target', 'Caiu dentro da margem', A.n ? cu(Math.round(A.cover * 100), 'i') + '<small>%</small>' : '—', 'meta 80% · ' + E.fint(A.n || 0) + ' previsões conferidas em ' + sc.days + ' dias', 'pj-score') +
+      kp(2, A.n && A.mae < A.naive ? 'better' : 'flat', 'clock', 'Erro médio', A.n ? '±' + cu(A.mae, 'n') + '<small>pontos</small>' : '—', A.n ? 'repetir o último turno erraria ±' + E.f1(A.naive) + (A.naive > A.mae ? ' (' + Math.round((1 - A.mae / A.naive) * 100) + '% a mais)' : '') : '', 'g-backtest') +
+      kp(3, A.sideP >= 0.85 ? 'better' : 'flat', 'check', 'Acertou o lado dos 10%', A.n ? cu(Math.round(A.sideP * 100), 'i') + '<small>%</small>' : '—', 'disse acima e foi acima, ou disse abaixo e foi abaixo', 'pj-score') +
+      kp(4, 'none', 'hist', 'Último dia · ' + (sc.last != null ? E.dlabel(DS.dates[sc.last]) : '—'), '<span class="pj-yv">T1 <b>' + yt(sc.t1) + '</b> · T2 <b>' + yt(sc.t2) + '</b></span>', 'itens que caíram dentro da margem prevista na véspera', 'pj-tm') + '</div>';
+    var tab = S.pjTab === 'rel' ? 'rel' : 'sim';
+    mount(kpis +
+      pnl(1, 'Próximo T' + (t + 1) + ' · ' + E.DOWF[nx.w] + ' ' + E.dm(nx.iso) + ' — o que deve acontecer', 'barra = faixa provável (margem de erro) · traço = previsão · linha amarela = 10% · toque num item para ver o porquê', '', { icon: 'proj', bid: 'pj-risk', key: 'pj-risk', info: 'pj-risk', short: 'Próximo turno', mh: 24, style: 'grid-area:a', right: segHtml('pj-t', [['0', 'T1'], ['1', 'T2']], String(t)) }) +
+      pnl(2, 'Por que esse número?', sel ? esc(sel.it.title) + ' · ' + esc(sel.it.setor) + ' · T' + (t + 1) : '', '', { icon: 'bolt', bid: 'pj-why', key: 'pj-why', info: 'pj-why', short: 'Por quê', mh: 22, cls: 'scrolly', style: 'grid-area:b', right: sel ? '<button class="lnk" data-item="' + sel.it.id + '">dossiê →</button>' : '' }) +
+      pnl(3, 'Previsto × real · ' + (sel ? esc(sel.it.title) : ''), 'últimos 30 T' + (t + 1) + ': faixa = margem dada na véspera · ponto = o que aconteceu', '', { icon: 'trend', bid: 'pj-fan', key: 'pj-fan', info: 'pj-fan', short: 'Previsto × real', mh: 16, style: 'grid-area:d', right: '<div class="legend"><span><i style="background:var(--acc)"></i>dentro</span><span><i style="background:var(--bad)"></i>veio pior</span><span><i style="background:var(--good)"></i>veio melhor</span></div>' }) +
+      pnl(4, 'Máquina do tempo · previsto × real', 'o que o Radar disse na véspera (sem ver a resposta) e o que aconteceu', '', { icon: 'hist', bid: 'pj-tm', key: 'pj-tm', info: 'pj-tm', short: 'Previsto × real do dia', mh: 22, style: 'grid-area:c' }) +
+      pnl(5, tab === 'rel' ? 'O Radar acerta?' : 'E se…? · cenário do processo', tab === 'rel' ? 'chance prevista × o que aconteceu, em ' + E.fint(cal.eval.n) + ' previsões que o modelo nunca viu' : 'simule uma variável do processo saindo do padrão e veja o efeito previsto no próximo T' + (t + 1), '', { icon: tab === 'rel' ? 'check' : 'sliders', bid: 'pj-x', key: 'pj-x', info: tab === 'rel' ? 'pj-rel' : 'pj-sim', short: tab === 'rel' ? 'Confiabilidade' : 'E se…?', mh: 18, style: 'grid-area:e', right: segHtml('pj-tab', [['sim', 'E se…?'], ['rel', 'Acerta?']], tab) }),
+      'grid-template-columns:minmax(0,1.1fr) minmax(0,1.1fr) minmax(0,1fr);grid-template-rows:auto minmax(0,1.15fr) minmax(0,1fr);grid-template-areas:"k k k" "a b c" "a d e"');
     post(function () {
       wireSeg('pj-t', function (v) { navGo({ projT: +v }, { replace: true }); });
-      var body = $('#pj-risk'), rows = rk.rows;
-      body.style.display = 'flex'; body.style.flexDirection = 'column';
-      body.innerHTML = '<div class="rk-top"><div class="rk-big"><span>itens ≥ 10% esperados</span><b class="num">~' + cu(Math.round(rk.exp), 'i') + '</b><small>faixa provável ' + rk.lo + ' a ' + rk.hi + ' · ' + rows.length + ' itens monitorados</small></div><div class="rk-mini">' + [[0.7, 'quase certo (≥ 70%)'], [0.4, 'provável (40–70%)'], [0.15, 'atenção (15–40%)']].map(function (b, j, a) { var hi = j ? a[j - 1][0] : 1.01, n = rows.filter(function (o) { return o.p >= b[0] && o.p < hi; }).length; return '<span><b>' + n + '</b> ' + b[1] + '</span>'; }).join('') + '</div></div><div class="pr-l" style="flex:1;min-height:0"></div>';
-      var lst = $('.pr-l', body), list = rows.filter(function (o) { return o.p >= 0.03; });
-      paged(lst, list, 'proj|' + t, 2.15, 2.6, function (o, k, rh, j) {
-        var st = o.p >= 0.7 ? 'worse' : o.p >= 0.4 ? 'flat' : 'none', ef = !!o.it.ev;
-        var tip = '<div class="tt">' + esc(o.it.title) + ' · próximo T' + (t + 1) + '</div><div class="tr"><span>chance de ≥ 10%' + (ef ? ' de ineficiência' : '') + '</span><b>' + Math.round(o.p * 100) + '%</b></div><div class="tr"><span>valor previsto</span><b>' + E.fp(o.f.pred) + '</b></div><div class="tr"><span>faixa provável</span><b>' + E.f1(o.f.lo) + ' a ' + E.f1(o.f.hi) + '%</b></div><div class="tr"><span>último T' + (t + 1) + ' (' + E.dlabel(DS.dates[o.last.u.d]) + ')</span><b>' + E.fp(o.last.v) + '</b></div>';
-        return '<div class="pp-r st-' + st + '" style="--rh:' + rh + 'px;--k:' + j + '" data-item="' + o.it.id + '" data-tip="' + esc(tip) + '"><div class="rk-name"><b>' + esc(o.it.title) + '</b><span>' + esc(o.it.setor) + ' · previsto ~' + E.fp(o.f.pred) + '</span></div><div class="bar"><i class="fill" data-w="' + (o.p * 100).toFixed(1) + '%"></i></div><b class="num pp-p">' + Math.round(o.p * 100) + '%</b></div>';
-      }, null, {});
+      var body = $('#pj-risk'), list = rows.filter(function (o) { return o.p >= 0.03 || o.f.pred >= 3; });
+      if (!list.length) { body.innerHTML = emptyMsg('Nenhum item com risco relevante', 'Todos os itens monitorados estão bem abaixo de 10%.'); return; }
+      body.classList.add('fxcol');
+      body.innerHTML = '<div class="pjh"><span>Item</span><span>faixa provável</span><span>previsto · margem</span><span>≥ 10%</span></div><div class="pjl"></div><div class="lfoot"></div>';
+      var mx = Math.min(45, Math.max(20, Math.max.apply(null, list.slice(0, 30).map(function (o) { return o.f.hi; })) * 1.05));
+      paged($('.pjl', body), list, 'pj|' + t, 2.5, 3.1, function (o, k, rh, j) {
+        var f = o.f, st = o.p >= 0.7 ? 'worse' : o.p >= 0.4 ? 'flat' : 'none', w0 = f.why && f.why[0];
+        var tip = '<div class="tt">' + esc(o.it.title) + ' · próximo T' + (t + 1) + '</div><div class="tr"><span>previsão</span><b>' + E.fp(f.pred) + '</b></div><div class="tr"><span>margem de erro</span><b>' + margTxt(f) + ' pontos</b></div><div class="tr"><span>faixa provável</span><b>' + E.f1(f.lo) + '% a ' + E.f1(f.hi) + '%</b></div><div class="tr"><span>chance de ≥ 10%</span><b>' + pctTxt(o.p) + '</b></div><div class="tr"><span>último T' + (t + 1) + ' (' + E.dlabel(DS.dates[o.last.u.d]) + ')</span><b>' + E.fp(o.last.v) + '</b></div><div class="mut">toque para ver o porquê</div>';
+        return '<div class="pjr st-' + st + (sel && o.it.id === sel.it.id ? ' on' : '') + '" style="--rh:' + rh + 'px;--k:' + j + '" data-pjsel="' + o.it.id + '" data-tip="' + esc(tip) + '"><div class="rk-name"><b>' + esc(o.it.title) + '</b><span>' + esc(o.it.setor) + (w0 ? ' · ' + esc(w0.s) : '') + '</span></div>' + bandBar(f, mx) + '<div class="pjv"><b class="num">' + E.fp(f.pred) + '</b><small>' + margTxt(f) + '</small></div><b class="num pjc">' + pctTxt(o.p) + '</b></div>';
+      }, $('.lfoot', body), { note: list.length + ' itens · do mais provável de passar de 10% para o menos', goTo: Math.max(0, list.indexOf(sel)), after: function () { $$('[data-pjsel]', body).forEach(function (r) { r.onclick = function (e) { e.stopPropagation(); hideTip(); navGo({ pjSel: +r.getAttribute('data-pjsel') }, { replace: true }); }; }); } });
     });
+    post(function () { pjWhy($('#pj-why'), sel, t); });
+    post(function () { if (sel) pjFan($('#pj-fan'), sel.it.id, t); else $('#pj-fan').innerHTML = emptyMsg('Sem item', ''); });
+    post(function () { drawTM(tmD, tmT); });
     post(function () {
-      var host = $('#pj-pr'), dd = cal.days.filter(function (x) { return x.t === t; }).slice(-30);
-      var mae = dd.length ? dd.reduce(function (s, x) { return s + Math.abs(x.exp - x.real); }, 0) / dd.length : null;
-      var hd = host.parentNode.querySelector('.pnl-h .sub'); if (hd && mae != null) hd.textContent = 'T' + (t + 1) + ' · cada ponto é um turno · erro médio ±' + E.f1(mae) + ' item por turno · o Radar não viu a resposta';
-      lineChart(host, { labels: dd.map(function (x) { return E.dlabel(DS.dates[x.d]); }), series: [{ name: 'Previsto', color: 'var(--acc)', vals: dd.map(function (x) { return Math.round(x.exp * 10) / 10; }), area: true, glow: true, w: 2.6 }, { name: 'Real', color: 'var(--flat)', vals: dd.map(function (x) { return x.real; }), w: 2.2 }], vfmt: function (v) { return E.f1(v) + ' itens'; }, yfmt: function (v) { return v; }, tipTitle: function (k) { return E.dlabelLong(DS.dates[dd[k].d]) + ' · T' + (t + 1); }, tipExtra: function (k) { return '<div class="tr"><span>itens avaliados</span><b>' + dd[k].n + '</b></div>'; }, onClick: function (k) { navGo({ tmD: dd[k].d, tmT: t }, { replace: true }); } });
-    });
-    post(function () {
-      var body = $('#pj-rel'), pc = function (v) { return v == null ? '—' : Math.round(v * 100) + '%'; };
-      body.innerHTML = '<div class="rel"><div class="rel-c" id="pj-relc"></div><div class="rel-s">' +
+      wireSeg('pj-tab', function (v) { navGo({ pjTab: v }, { replace: true }); });
+      var host = $('#pj-x');
+      if (tab === 'sim') { pjSim(host, t); return; }
+      var ev = cal.eval, pc = function (v) { return v == null ? '—' : Math.round(v * 100) + '%'; };
+      host.innerHTML = '<div class="rel"><div class="rel-c" id="pj-relc"></div><div class="rel-s">' +
         '<div class="stat st-better"><span class="sl">Disse ≥ 70%</span><span class="sv num" style="color:var(--c)">' + pc(ev.hi70.rate) + '</span><span class="ss">passou de 10% de verdade (' + E.fint(ev.hi70.n) + ' casos)</span></div>' +
         '<div class="stat st-better"><span class="sl">Disse &lt; 10%</span><span class="sv num" style="color:var(--c)">' + pc(ev.lo10.rate) + '</span><span class="ss">passou mesmo assim (' + E.fint(ev.lo10.n) + ' casos)</span></div>' +
         '<div class="stat"><span class="sl">Separa bem?</span><span class="sv num">' + (ev.auc != null ? fdec(ev.auc, 2) : '—') + '</span><span class="ss">AUC (1 = perfeito · 0,5 = sorteio)</span></div>' +
         '<div class="stat"><span class="sl">Avisou antes</span><span class="sv num">' + pc(ev.caught) + '</span><span class="ss">dos itens que passaram tinham ≥ 50%</span></div></div></div>';
       relChart($('#pj-relc'), cal.bins);
     });
-    post(function () { drawTM(tmD, tmT); });
   }
+  /* "por que esse número?" — a conta, parte por parte, e as variáveis do processo */
+  function pjWhy(host, o, t) {
+    if (!host) return;
+    if (!o) { host.innerHTML = emptyMsg('Escolha um item na lista', ''); return; }
+    var C = CTX(), f = o.f, it = o.it, why = f.why || [], bt = f.bt, base = f.level, sum = base, show = why.slice(0, 6);
+    show.forEach(function (w) { sum += w.val; });
+    var rest = f.pred - sum, mxv = Math.max(0.5, Math.max.apply(null, show.map(function (w) { return Math.abs(w.val); }).concat([Math.abs(rest)])));
+    var row = function (lbl, v, kind, det) {
+      var bar = '';
+      if (kind === 'c') { var w = Math.min(48, Math.abs(v) / mxv * 48); bar = '<span class="pjw-bar"><i class="' + (v > 0 ? 'up' : 'dn') + '" style="width:' + w.toFixed(1) + '%"></i></span>'; }
+      else bar = '<span class="pjw-bar nb"></span>';
+      return '<div class="pjw-r pjw-' + kind + '"><span class="pjw-t">' + lbl + (det ? '<small>' + esc(det) + '</small>' : '') + '</span>' + bar + '<b class="num">' + (kind === 'c' ? (v > 0 ? '+' : '−') + E.f1(Math.abs(v)) : E.fp(v)) + '</b></div>';
+    };
+    var h = '<div class="pjw-top"><div class="pjw-big"><b class="num">' + cu(f.pred, 'p') + '</b><span>previsão · T' + (t + 1) + ' de ' + E.dlabelLong(f.iso) + '</span></div>' +
+      '<div class="pjw-m"><div class="pjw-mg"><span class="up">+' + E.f1(f.mhi) + '</span><span class="dn">−' + E.f1(f.mlo) + '</span><em>pontos</em></div><span>margem de erro: pode vir até <b>' + E.f1(f.mhi) + ' pontos pra mais</b> ou <b>' + E.f1(f.mlo) + ' pra menos</b> · faixa provável <b>' + E.f1(f.lo) + '% a ' + E.f1(f.hi) + '%</b> (8 em cada 10 vezes o real cai aqui)</span></div></div>';
+    h += '<div class="pjw-chips"><span class="chip st-' + (o.p >= 0.5 ? 'worse' : o.p >= 0.2 ? 'flat' : 'none') + '">chance de ≥ 10%: ' + pctTxt(o.p) + '</span>' + confChip(f.conf) + (bt ? '<span class="chip st-none" data-info="g-backtest">nos últimos ' + bt.n + ' turnos: erro médio ±' + E.f1(bt.mae) + ' · dentro da margem ' + Math.round(bt.cover * 100) + '%</span>' : '') + '</div>';
+    h += '<div class="pjw-h">A conta, parte por parte</div><div class="pjw-l">' + row('Ponto de partida: média recente do T' + (t + 1) + ' (memória de ~' + Math.round(1 / f.lamS) + ' turnos)', base, 'b');
+    show.forEach(function (w) { h += row(esc(w.lbl), w.val, 'c', w.det); });
+    if (Math.abs(rest) >= 0.05) h += row('Outros ajustes pequenos' + (f.pred <= 0.05 ? ' (e o limite de 0%)' : ''), rest, 'c');
+    h += row('<b>= Previsão</b>', f.pred, 't') + '</div>';
+    var m = C.model(it.id, t), links = m ? m.links : [];
+    h += '<div class="pjw-h">Variáveis do processo ligadas a este item</div>';
+    if (links.length) h += links.map(function (l) {
+      var q = -1; m.F.forEach(function (ff, k) { if (ff.k === 'lk' && ff.link.i === l.i) q = k; });
+      var th = q >= 0 ? m.live.th[q] : 0, x = q >= 0 ? m.live.x[q] : 0, nz = q >= 0 ? m.nz[q] : 0;
+      return '<div class="pjw-p"><b>' + esc(l.it.title) + ' <span class="tag">' + esc(l.it.setor) + '</span></b><span>' + esc(l.rule.m) + '</span><em>' +
+        (x > 0.5 ? 'último turno: ' + E.f1(x) + ' pontos acima do normal' : x < -0.5 ? 'último turno: abaixo do normal' : 'último turno: no normal') + ' · ' +
+        (Math.abs(th) >= 0.004 ? 'a cada 10 pontos acima do normal, este item ' + (th > 0 ? 'sobe' : 'cai') + ' ~' + E.f1(Math.abs(th * 10)) + ' ponto' + (Math.abs(th * 10) >= 1.95 ? 's' : '') : 'nos dados, o efeito ainda é pequeno') + ' · ' + (nz >= 15 ? 'peso medido nos dados' : 'peso estimado pelo processo (pouco histórico)') + '</em></div>';
+    }).join('');
+    else h += '<div class="pjw-p"><span>Nenhuma variável de máquina/processo da base aparece ligada a este item no mapa do processo. Aqui o Radar se apoia no histórico do item, no outro turno, nos itens que andam junto com ele e na planta toda.' + (/dermatit|calo|hematoma|pes escuros/.test(E.fold(it.param)) ? ' Este tipo de desvio costuma vir da granja/apanha (lote de aves): por isso o sinal do outro turno pesa tanto.' : '') + '</span></div>';
+    host.innerHTML = h;
+    animateIn(host);
+  }
+  /* previsto × real ao longo do tempo para um item: a faixa da margem e os pontos reais */
+  function pjFan(host, i, t) {
+    if (!host) return;
+    var C = CTX(), m = C.model(i, t); if (!m) { host.innerHTML = emptyMsg('Pouco histórico', ''); return; }
+    var n = m.P.length, pts = [];
+    for (var j = Math.max(24, n - 30); j < n; j++) { var f = C.forecast(i, t, j); if (f) pts.push({ d: m.P[j].u.d, f: f, v: m.P[j].v }); }
+    var fl = C.forecast(i, t); if (fl) pts.push({ d: null, f: fl, v: null });
+    if (pts.length < 2) { host.innerHTML = emptyMsg('Pouco histórico', ''); return; }
+    var c = base(host, { l: 34, r: 16, t: 14, b: 22 }); if (c.iw < 60 || c.ih < 40) return;
+    var all = [12]; pts.forEach(function (p) { all.push(p.f.hi); if (p.v != null) all.push(p.v); });
+    var ax = axisY(c, 0, Math.max.apply(null, all) * 1.08), N = pts.length;
+    var xf = function (k) { return c.l + k * c.iw / (N - 1); };
+    var top = pts.map(function (p, k) { return xf(k).toFixed(1) + ',' + ax.y(p.f.hi).toFixed(1); }), bot = pts.map(function (p, k) { return xf(k).toFixed(1) + ',' + ax.y(p.f.lo).toFixed(1); }).reverse();
+    var bd = sv('path', { d: 'M' + top.join('L') + 'L' + bot.join('L') + 'Z', fill: 'var(--acc)', 'fill-opacity': 0.16, stroke: 'none' }, c.svg); if (ANIM) bd.setAttribute('class', 'fadein');
+    thrLine(c, ax, 10);
+    var pl = sv('path', { d: 'M' + pts.map(function (p, k) { return xf(k).toFixed(1) + ',' + ax.y(p.f.pred).toFixed(1); }).join('L'), fill: 'none', stroke: 'var(--acc)', 'stroke-width': 1.8 * Math.sqrt(CH.k), 'stroke-dasharray': '5 4' }, c.svg);
+    pl.style.opacity = 0.85;
+    var ins = 0, tot = 0;
+    pts.forEach(function (p, k) {
+      var x = xf(k);
+      if (p.v == null) {
+        var g0 = sv('g', { 'data-tip': '<div class="tt">Próximo T' + (t + 1) + ' · ' + E.dlabelLong(p.f.iso) + '</div><div class="tr"><span>previsão</span><b>' + E.fp(p.f.pred) + '</b></div><div class="tr"><span>margem</span><b>' + margTxt(p.f) + ' pontos</b></div>' }, c.svg);
+        sv('line', { x1: x, x2: x, y1: ax.y(p.f.hi), y2: ax.y(p.f.lo), stroke: 'var(--acc)', 'stroke-width': 3 * Math.sqrt(CH.k), 'stroke-linecap': 'round', opacity: 0.6 }, g0);
+        var cc = sv('circle', { cx: x, cy: ax.y(p.f.pred), r: 5 * Math.sqrt(CH.k), fill: 'var(--bg0)', stroke: 'var(--acc)', 'stroke-width': 2.4 }, g0); cc.setAttribute('class', 'spc-ring');
+        var tx = sv('text', { x: x - 6, y: ax.y(p.f.hi) - 6, 'text-anchor': 'end', class: 'vl' }, g0); tx.textContent = 'próximo ' + E.f1(p.f.pred) + '%'; tx.style.fill = 'var(--acc)';
+        return;
+      }
+      tot++;
+      var st = p.v > p.f.hi + 1e-9 ? 'up' : p.v < p.f.lo - 1e-9 ? 'dn' : 'in'; if (st === 'in') ins++;
+      var col = st === 'up' ? 'var(--bad)' : st === 'dn' ? 'var(--good)' : 'var(--acc)', err = p.v - p.f.pred;
+      var g = sv('g', { 'data-tip': '<div class="tt">' + E.DOWF[E.dow(DS.dates[p.d])] + ', ' + E.dmy(DS.dates[p.d]) + ' · T' + (t + 1) + '</div><div class="tr"><span>previsto na véspera</span><b>' + E.fp(p.f.pred) + '</b></div><div class="tr"><span>margem</span><b>' + E.f1(p.f.lo) + '% a ' + E.f1(p.f.hi) + '%</b></div><div class="tr"><span>aconteceu</span><b>' + E.fp(p.v) + '</b></div><div class="tr"><span>erro</span><b>' + (err >= 0 ? '+' : '−') + E.f1(Math.abs(err)) + ' pontos</b></div><div class="mut">' + (st === 'in' ? 'dentro da margem ✓' : st === 'up' ? 'veio pior que a margem' : 'veio melhor que a margem') + '</div>' }, c.svg);
+      var ci = sv('circle', { cx: x, cy: ax.y(p.v), r: (st === 'in' ? 3.4 : 4.4) * Math.sqrt(CH.k), fill: col, stroke: 'var(--bg0)', 'stroke-width': 1.5 }, g);
+      if (ANIM) { ci.setAttribute('class', 'fadein'); ci.style.animationDelay = (k * 30) + 'ms'; }
+    });
+    xLabels(c, pts.map(function (p) { return p.d == null ? 'próx.' : E.dlabel(DS.dates[p.d]); }), xf, [N - 1]);
+    var hd = host.parentNode.querySelector('.pnl-h .sub'); if (hd && tot) hd.textContent = 'últimos ' + tot + ' T' + (t + 1) + ': caiu dentro da margem em ' + ins + ' (' + Math.round(ins / tot * 100) + '%) · faixa = margem dada na véspera';
+  }
+  /* máquina do tempo: previsto × real de um dia, item a item, com o erro em pontos */
   function drawTM(d, t) {
     var body = $('#pj-tm'); if (!body) return;
     var C = CTX(), rp = C.replay(d, t), iso = DS.dates[d];
     var prevD = DS.prevDay(d, [t], false), nextD = DS.nextDay(d, [t]); if (nextD > DS.lastDay([t])) nextD = -1;
-    body.style.display = 'flex'; body.style.flexDirection = 'column';
-    var hits = rp.rows.filter(function (o) { return o.y; }), warned = hits.filter(function (o) { return o.p >= 0.5; }).length, fa = rp.rows.filter(function (o) { return !o.y && o.p >= 0.5; }).length;
+    body.classList.add('fxcol');
+    var R = rp.rows.filter(function (o) { return o.f && (o.pred >= 2 || o.v >= 2 || o.p >= 0.1); }), ins = 0, up = 0, dn = 0, side = 0, mae = 0;
+    R.forEach(function (o) { o.st = o.v > o.hi + 1e-9 ? 'up' : o.v < o.lo - 1e-9 ? 'dn' : 'in'; if (o.st === 'in') ins++; else if (o.st === 'up') up++; else dn++; if ((o.pred >= 9.95) === (o.v >= 9.95)) side++; mae += Math.abs(o.v - o.pred); });
+    R.sort(function (a, b) { return (b.st !== 'in') - (a.st !== 'in') || Math.max(b.v, b.pred) - Math.max(a.v, a.pred); });
     body.innerHTML = '<div class="tm-h"><span class="mnav"><button class="ib" id="tm-p"' + (prevD < 0 ? ' disabled' : '') + '>' + I('chevL') + '</button><b>' + E.dlabelLong(iso) + ' · T' + (t + 1) + '</b><button class="ib" id="tm-n"' + (nextD < 0 ? ' disabled' : '') + '>' + I('chevR') + '</button></span>' + segHtml('tm-t', [['0', 'T1'], ['1', 'T2']], String(t)) + '</div>' +
-      (rp.rows.length ? '<div class="tm-s"><div><span>o Radar previa</span><b class="num">~' + E.f1(rp.exp) + '</b></div><div><span>foram de verdade</span><b class="num" style="color:var(--flat)">' + rp.real + '</b></div><div><span>avisou com ≥ 50%</span><b class="num" style="color:var(--good)">' + warned + '/' + hits.length + '</b></div><div><span>alarmes falsos</span><b class="num" style="color:var(--tx2)">' + fa + '</b></div></div><div class="tm-l" style="flex:1;min-height:0"></div>' : emptyMsg('Sem histórico suficiente neste dia', 'Escolha um dia mais recente.'));
+      (R.length ? '<div class="tm-s"><div><span>dentro da margem</span><b class="num" style="color:var(--acc)">' + ins + '/' + R.length + '</b></div><div><span>erro médio</span><b class="num">±' + E.f1(mae / R.length) + '</b></div><div><span>veio pior que a margem</span><b class="num" style="color:var(--bad)">' + up + '</b></div><div><span>veio melhor</span><b class="num" style="color:var(--good)">' + dn + '</b></div></div><div class="tm-l"></div><div class="lfoot"></div>' : emptyMsg('Sem previsão para este dia', 'O dia não tem lançamento deste turno ou o histórico ainda é curto. Use as setas.'));
     $('#tm-p', body).onclick = function () { navGo({ tmD: prevD, tmT: t }, { replace: true }); };
     $('#tm-n', body).onclick = function () { if (nextD >= 0) navGo({ tmD: nextD, tmT: t }, { replace: true }); };
-    wireSeg('tm-t', function (v) { navGo({ tmT: +v }, { replace: true }); });
+    wireSeg('tm-t', function (v) { navGo({ tmT: +v, tmD: S.tmD != null ? S.tmD : null }, { replace: true }); });
     var lst = $('.tm-l', body); if (!lst) return;
-    var list = rp.rows.filter(function (o) { return o.p >= 0.15 || o.y; });
-    paged(lst, list, 'tm|' + d + '|' + t, 1.95, 2.3, function (o, k, rh, j) {
-      var ok = o.y ? o.p >= 0.5 : o.p < 0.5, real = o.v;
-      return '<div class="tm-r ' + (ok ? 'ok' : 'miss') + '" style="--rh:' + rh + 'px;--k:' + j + '"><span class="tm-i">' + (ok ? '✓' : '✗') + '</span><span class="tm-n">' + esc(o.it.title) + '</span><span class="tm-p"><i style="width:' + (o.p * 100).toFixed(0) + '%"></i><b>' + Math.round(o.p * 100) + '%</b></span><span class="tm-v num ' + (o.y ? 'hot' : '') + '">' + E.fp(real) + '</span></div>';
-    }, null, { note: 'chance dada na véspera · valor real' + (list.length < rp.rows.length ? ' · ' + (rp.rows.length - list.length) + ' itens com < 15% e abaixo de 10%' : '') });
+    var mx = Math.min(45, Math.max(20, Math.max.apply(null, R.map(function (o) { return Math.max(o.hi, o.v); })) * 1.05));
+    paged(lst, R, 'tm|' + d + '|' + t, 2.35, 2.8, function (o, k, rh, j) {
+      var err = o.v - o.pred, cls = o.st === 'in' ? 'better' : o.st === 'up' ? 'worse' : 'flat';
+      var tip = '<div class="tt">' + esc(o.it.title) + '</div><div class="tr"><span>previsto na véspera</span><b>' + E.fp(o.pred) + '</b></div><div class="tr"><span>margem</span><b>' + margTxt(o.f) + ' pontos</b></div><div class="tr"><span>aconteceu</span><b>' + E.fp(o.v) + (o.am ? ' <small>' + E.fint(o.nc) + '/' + E.fint(o.am) + '</small>' : '') + '</b></div><div class="mut">' + (o.st === 'in' ? 'dentro da margem ✓' : o.st === 'up' ? 'veio ' + E.f1(o.v - o.hi) + ' ponto(s) acima da margem' : 'veio ' + E.f1(o.lo - o.v) + ' ponto(s) abaixo da margem') + '</div>';
+      return '<div class="tmr st-' + cls + '" style="--rh:' + rh + 'px;--k:' + j + '" data-item="' + o.it.id + '" data-tip="' + esc(tip) + '"><span class="tmr-i">' + (o.st === 'in' ? '✓' : o.st === 'up' ? '▲' : '▼') + '</span><div class="rk-name"><b>' + esc(o.it.title) + '</b><span>previsto ' + E.fp(o.pred) + ' (' + margTxt(o.f) + ') · real <b>' + E.fp(o.v) + '</b></span></div>' + bandBar(o.f, mx, o.v) + '<span class="tmr-e num">' + (err >= 0 ? '+' : '−') + E.f1(Math.abs(err)) + '<small>' + (o.st === 'in' ? 'dentro' : o.st === 'up' ? 'veio pior' : 'veio melhor') + '</small></span></div>';
+    }, $('.lfoot', body), { note: 'acertou o lado dos 10% em ' + side + ' de ' + R.length + ' itens · fora da margem primeiro' });
+  }
+  /* simulador "e se...?": uma variável do processo sai do padrão */
+  function pjSim(host, t) {
+    if (!host) return;
+    var C = CTX(), causes = C.simCauses(t);
+    if (!causes.length) { host.innerHTML = emptyMsg('Nenhuma variável do processo ligada aos itens', 'A base não tem parâmetros de máquina ligados a itens de qualidade.'); return; }
+    var top = causes.slice().sort(function (a, b) { return b.n - a.n || (/temperatura da agua/.test(E.fold(b.it.param)) - /temperatura da agua/.test(E.fold(a.it.param))); })[0], cid = S.simC != null && causes.some(function (c) { return c.i === S.simC; }) ? S.simC : top.i, lvl = S.simL === 'alto' ? 'alto' : 'critico';
+    var cz = causes.filter(function (c) { return c.i === cid; })[0], sim = C.simulate(cid, lvl, t);
+    host.classList.add('fxcol');
+    var opts = causes.map(function (c) { return '<option value="' + c.i + '"' + (c.i === cid ? ' selected' : '') + '>' + esc(c.it.title) + ' · ' + esc(c.it.setor) + '</option>'; }).join('');
+    var nCross = sim.rows.filter(function (r) { return r.cross; }).length;
+    var h = '<div class="sim-c"><select class="sel" id="sim-c" aria-label="Variável do processo">' + opts + '</select>' + segHtml('sim-l', [['alto', 'Fora do padrão'], ['critico', 'Quebrou / crítico']], lvl) + '</div>' +
+      '<div class="sim-m">' + I('info') + '<span>Se no turno anterior <b>' + esc(cz.it.title) + '</b> ficar <b>' + E.f1(sim.tgt) + ' pontos acima do normal</b> (' + (lvl === 'alto' ? 'como num dia ruim comum' : 'como nos piores dias do histórico, máquina quebrada ou parada') + '), o próximo T' + (t + 1) + ' deve mudar assim' + (nCross ? ' — <b style="color:var(--bad)">' + nCross + (nCross === 1 ? ' item passa' : ' itens passam') + ' de 10%</b>' : '') + '. ' + esc(cz.rules[0].m) + '</span></div><div class="sim-l"></div>';
+    host.innerHTML = h;
+    var lst = $('.sim-l', host), R = sim.rows;
+    if (!R.length) { lst.innerHTML = emptyMsg('Sem item afetado', ''); }
+    else {
+      var f2 = fit(lst, R.length, 2.3, 2.8);
+      lst.innerHTML = R.slice(0, f2.shown).map(function (r, k) {
+        return '<div class="simr st-' + (r.cross ? 'worse' : r.dl > 0.05 ? 'flat' : 'none') + '" style="height:' + f2.rh + 'px;--k:' + k + '" data-item="' + r.it.id + '"><div class="rk-name"><b>' + esc(r.it.title) + '</b><span>' + esc(r.it.setor) + ' · ' + (r.data ? 'peso medido nos dados' : 'peso estimado pelo processo') + '</span></div><span class="simv num">' + E.fp(r.pred) + ' <i>→</i> <b>' + E.fp(r.np) + '</b></span><span class="simd num">' + (r.dl >= 0 ? '+' : '−') + E.f1(Math.abs(r.dl)) + '</span>' + (r.cross ? '<span class="chip st-worse">passa de 10%</span>' : '<span></span>') + '</div>';
+      }).join('');
+    }
+    $('#sim-c', host).onchange = function () { S.simC = +this.value; pjSim(host, t); };
+    wireSeg('sim-l', function (v) { S.simL = v; pjSim(host, t); });
+    animateIn(host);
   }
   /* ======================= DE ONDE VEIO A DIFERENÇA (cascata da taxa geral) ======================= */
   function waterfall(host, cx, o) {
@@ -7015,7 +7571,12 @@ if (typeof module !== 'undefined') module.exports = RECO;
     var t = S.projT != null ? S.projT : nextShift().t, rk = C.risk(t), ev = cal.eval, K = 'Previsão · próximo T' + (t + 1), deck = [];
     deck.push({ name: 'Próximo turno', kick: K, ch: ch, keys: ['pj-risk'], note: 'Para o próximo T' + (t + 1) + ', o Radar espera cerca de ' + Math.round(rk.exp) + ' itens acima de 10% (faixa de ' + rk.lo + ' a ' + rk.hi + '). Os de maior chance estão no topo.', r: function (el) {
       var top = rk.rows.slice(0, 7);
-      el.innerHTML = '<div class="sl-c">' + slTitle('Previsão calibrada', 'Próximo T' + (t + 1) + ': ~' + Math.round(rk.exp) + ' itens ≥ 10%', 'faixa provável ' + rk.lo + ' a ' + rk.hi + ' · chance de cada item passar do corte') + slBars(top.map(function (o) { return { name: o.it.title, sub: o.it.kind === 'efic' ? 'ineficiência da evisceradora' : o.it.setor, v: Math.round(o.p * 1000) / 10, w: o.p * 100, st: o.p >= 0.7 ? 'worse' : o.p >= 0.4 ? 'flat' : 'none', chip: '<span class="chip st-none">prev. ~' + E.fp(o.it.kind === 'efic' ? 100 - o.f.pred : o.f.pred) + '</span>' }; }), 100, null) + '</div>';
+      el.innerHTML = '<div class="sl-c">' + slTitle('Previsão com margem de erro', 'Próximo T' + (t + 1) + ': ~' + Math.round(rk.exp) + ' itens ≥ 10%', 'faixa provável ' + rk.lo + ' a ' + rk.hi + ' itens · barra = chance de cada item passar do corte · etiqueta = valor previsto e margem') + slBars(top.map(function (o) { return { name: o.it.title, sub: o.it.kind === 'efic' ? 'ineficiência da evisceradora' : o.it.setor, v: Math.round(o.p * 1000) / 10, w: o.p * 100, st: o.p >= 0.7 ? 'worse' : o.p >= 0.4 ? 'flat' : 'none', chip: '<span class="chip st-none">~' + E.fp(o.f.pred) + ' (+' + E.f1(o.f.mhi) + '/−' + E.f1(o.f.mlo) + ')</span>' }; }), 100, null) + '</div>';
+    } });
+    deck.push({ name: 'Ontem: previsto × real', kick: K, ch: ch, keys: ['pj-tm', 'pj-fan'], note: 'Aqui está o que o Radar previu na véspera para cada item e o que aconteceu de verdade. O ✓ é quando o real caiu dentro da margem de erro; a seta mostra quando veio pior ou melhor que a margem.', r: function (el) {
+      var L = DS.lastDay([t]), rp = C.replay(L, t), R = rp.rows.filter(function (o) { return o.f && (o.pred >= 2 || o.v >= 2); }).sort(function (a, b) { return Math.max(b.v, b.pred) - Math.max(a.v, a.pred); }).slice(0, 7), ins = 0;
+      R.forEach(function (o) { o.st = o.v > o.hi + 1e-9 ? 'worse' : o.v < o.lo - 1e-9 ? 'better' : 'none'; if (o.st === 'none') ins++; });
+      el.innerHTML = '<div class="sl-c">' + slTitle('Previsto × real', 'T' + (t + 1) + ' de ' + E.dlabelLong(DS.dates[L]) + ': ' + ins + ' de ' + R.length + ' dentro da margem', 'previsão feita na véspera, sem ver a resposta · margem = +pontos pra mais / −pontos pra menos') + '<div class="sl-list">' + R.map(function (o, k) { var err = o.v - o.pred; return '<div class="sl-li st-' + o.st + '" style="--k:' + k + '"><b>' + esc(o.it.title) + ' <em>' + (o.st === 'none' ? '✓ dentro da margem' : o.st === 'worse' ? '▲ veio pior' : '▼ veio melhor') + '</em></b><span>previsto ' + E.fp(o.pred) + ' (+' + E.f1(o.hi - o.pred) + ' / −' + E.f1(o.pred - o.lo) + ') · real ' + E.fp(o.v) + ' · erro ' + (err >= 0 ? '+' : '−') + E.f1(Math.abs(err)) + ' ponto(s)</span></div>'; }).join('') + '</div></div>';
     } });
     deck.push({ name: 'Previsto × real', kick: K, ch: ch, keys: ['pj-pr'], note: 'Aqui o Radar voltou no tempo: para cada turno, previu quantos itens passariam de 10% sem ver a resposta. As duas linhas andando juntas mostram que ele acerta o tamanho do problema.', r: function (el) {
       var dd = cal.days.filter(function (x) { return x.t === t; }).slice(-24), mae = dd.reduce(function (s, x) { return s + Math.abs(x.exp - x.real); }, 0) / Math.max(1, dd.length);
